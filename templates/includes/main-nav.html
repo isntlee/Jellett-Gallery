@@ -8,9 +8,9 @@
             <!-- Keep the original tags/outline, so you can build it with the shell then customize when it's working -->
 
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Pieces</a>
             </div>
         </li>
@@ -20,10 +20,10 @@
                 Artists (Clothing)
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Lola Donoghue</a>
-                <a href="" class="dropdown-item">Emma Sheridan</a>
-                <a href="" class="dropdown-item">Chloe Early</a>
-                <a href="" class="dropdown-item">All Artists</a>
+                <a href="{% url 'products' %}?category=activewear,essentials" class="dropdown-item">Lola Donoghue</a>
+                <a href="{% url 'products' %}?category=jeans" class="dropdown-item">Emma Sheridan</a>
+                <a href="{% url 'products' %}?category=shirts" class="dropdown-item">Chloe Early</a>
+                <a href="{% url 'products' %}?category=activewear,essentials,jeans,shirts" class="dropdown-item">All Artists</a>
             </div>
         </li>
 
@@ -32,9 +32,9 @@
                 Exhibitions (Homeware)
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Georgia O'Keefe</a>
-                <a href="" class="dropdown-item">Toba Khedori</a>
-                <a href="" class="dropdown-item">All Exhibitions</a>
+                <a href="{% url 'products' %}?category=bed_bath" class="dropdown-item">Georgia O'Keefe</a>
+                <a href="{% url 'products' %}?category=kitchen_dining" class="dropdown-item">Toba Khedori</a>
+                <a href="{% url 'products' %}?category=bed_bath,kitchen_dining" class="dropdown-item">All Exhibitions</a>
             </div>
         </li>
 
@@ -43,10 +43,10 @@
                About Us (Special Offers)
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Option 1</a>
-                <a href="" class="dropdown-item">Option 2</a>
-                <a href="" class="dropdown-item">Option 3</a>
-                <a href="" class="dropdown-item">All Options</a>
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">Option 1</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Option 2</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Option 3</a>
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Options</a>
             </div>
         </li>
     </ul>
