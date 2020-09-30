@@ -1,5 +1,5 @@
 """
-WSGI config for Jellett_Gallery project.
+WSGI config for jellett-gallery project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Jellett_Gallery.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jellett-gallery.settings')
 
 application = get_wsgi_application()
