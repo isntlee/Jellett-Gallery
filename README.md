@@ -1,6 +1,6 @@
-[**sagacity**](https://sagacity.herokuapp.com/)
+[**jellett-gallery**](https://jellett-gallery.herokuapp.com/)
 
-# **sagacity**
+# **Jellett Gallery**
 
 This site was created to fill a niche, because for all of Dublin's local history collections none are particularly interactive or user-friendly. The central ambition of the project was to make this site as inclusive as possible, that actively encourages participation as the project is a public collection of local stories. And as the project was being submitted that process had definitely begun with several entries from several separate local sources. 
 
