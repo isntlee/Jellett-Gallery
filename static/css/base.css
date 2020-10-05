@@ -3,11 +3,41 @@ html {
 }
 
 body {
-    background: url('/media/cottonwoods.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+}
+
+/* Styling for home page */
+.home-carousel-item {
+  height: 88vh;
+  width: 100vw;
+}
+
+.carousel-image {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#carousel-img-1 {
+  background-image: url("/media/cottonwoods.jpg");
+  background-position: center 50%;
+}
+
+#carousel-img-2 {
+  background-image: url("/media/More%20planning%20than%20chance.jpg");
+  background-position: center 50%;
+}
+
+#carousel-img-3 {
+  background-image: url("/media/Sacred%20World.jpg");
+  background-position: center 50%;
+}
+
+.carousel-caption {
+   position: absolute;
+   left: -30vw;
+   bottom: 5vh;
 }
 
 /* from Bulma */
