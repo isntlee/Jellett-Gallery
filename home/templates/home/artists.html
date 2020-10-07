@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+<!-- page name here (SEO) -->
+{% block title %}About | Jellett Gallery{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Artists</h1>
+            <hr>
+        </div>
+        <div class="col-12 col-md-8">
+            <a href="{% url 'products' %}?category=bed_bath">Leah Beggs</a>
+
+            <a href="{% url 'products' %}?category=activewear,essentials">Lola Donaghue</a>
+
+            <a href="{% url 'products' %}?category=jeans">Mollie Douthit</a>
+
+            <a href="{% url 'products' %}?category=shirts">Chloe Early</a>
+
+            <a href="{% url 'products' %}?category=bed_bath">Mercedes Helnwein</a>
+
+            <a href="{% url 'products' %}?category=bed_bath">Eileen O'Sullivan</a>
+
+            <a href="{% url 'products' %}?category=bed_bath">Jane Rainey</a>
+
+            <a href="{% url 'products' %}?category=bed_bath">Kathrina Rupit</a>
+
+            <a href="{% url 'products' %}?category=bed_bath">Emma Sheridan</a>
+
+            <a href="{% url 'products' %}?category=bed_bath">Chanelle Walsh</a>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+            <img src="#" alt="Artist's work" class="w-100">
+        </div>
+        <div class="col-12 text-center">
+            <a href="{% url 'products' %}?category=bed_bath" class="btn btn-cta btn-black mb-5"></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
