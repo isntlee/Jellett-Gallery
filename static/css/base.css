@@ -146,6 +146,18 @@ a.category-badge > span.badge:hover {
     border-top: 0px solid;
 } */
 
+.artists-bio {
+    height: 60vh;
+}
+
+.artists-picture {
+    height: 60vh;
+}
+
+.artists-works-hr {
+    
+}
+
 .btt-button {
     height: 42px;
     width: 42px;
