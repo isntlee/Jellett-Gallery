@@ -142,6 +142,10 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+/* .hr-white {
+    border-top: 0px solid;
+} */
+
 .btt-button {
     height: 42px;
     width: 42px;
