@@ -56,9 +56,8 @@
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% for category in current_categories %}      
                                 {% if category.name == category.name %}
-                                    <span class="small"><h5> Artists Bio, in particular {{category.name}}</h5>
-                                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"</p>
-                                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"</p>
+                                    <span class="small"><h5> Artists Bio, in particular</h5>
+                                        <p>{{category.description}}</p>
                                     </span>
                                 {% endif %}
                             {% endfor %}
@@ -69,7 +68,15 @@
                     <div class="col-12 col-md-6 order-md-first artists-picture">
                         <p class="text-muted mt-3 text-center text-md-left">  
                             {% if category.name == category.name %}
-                                <span class="small"><h5> Artists picture, in particular {{category.name}}</h5></span>
+                                {% if category.image %}
+                                    <a href="{{ category.image.url }}" target="_blank">
+                                        <img class="card-img-top img-fluid" src="{{ category.image.url }}" alt="{{ category.image }}">
+                                    </a>
+                                    {% else %}
+                                    <a href="">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.image }}">
+                                    </a>
+                                {% endif %}
                             {% endif %}
                         </p>
                     </div>
