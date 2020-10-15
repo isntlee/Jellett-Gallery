@@ -56,9 +56,7 @@
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% for category in current_categories %}      
                                 {% if category.name == category.name %}
-                                    <span class="small"><h5> Artists Bio, in particular</h5>
-                                        <p>{{category.description}}</p>
-                                    </span>
+                                    <h5><span>{{category.description}}</span></h5>
                                 {% endif %}
                             {% endfor %}
                             {% if search_term %} Search results for <strong>'{{ search_term }}'</strong>{% endif %}

@@ -7,6 +7,10 @@ body {
     font-family: 'Lato';
 }
 
+span {
+    white-space: pre-wrap;
+}
+
 /* #footer {
   height: 40px;
 } */
@@ -154,8 +158,8 @@ a.category-badge > span.badge:hover {
     height: 60vh;
 }
 
-.artists-works-hr {
-    
+.text-wrap {
+    white-space: pre-wrap;
 }
 
 .btt-button {
