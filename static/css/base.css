@@ -151,15 +151,19 @@ a.category-badge > span.badge:hover {
 } */
 
 .artists-bio {
-    height: 60vh;
+    height: 80vh;
 }
 
 .artists-picture {
-    height: 60vh;
+    height: 80vh;
 }
 
-.text-wrap {
-    white-space: pre-wrap;
+.artists-bio-text {
+
+}
+
+.card-img-top {
+    width: 90%;
 }
 
 .btt-button {
