@@ -45,7 +45,7 @@
                         </div>
                     {% endif %}
                     <div class="col-12 col-md-6 order-md-first artists-bio">
-                        <p class="text-muted mt-3 text-center text-md-left">
+                        <p class="text-muted mt-3 mb-3 text-center text-md-left">
                             {% for category in current_categories %}      
                                 {% if category.name == category.name %}
                                     <span class="artists-bio-text">{{category.description}}</span>
@@ -55,7 +55,7 @@
                         </p>
                     </div>
                     {% for category in current_categories %} 
-                    <div class="col-12 offset-1 col-md-5 order-md-first mt-3 artists-picture">  
+                    <div class="col-12 offset-1 col-md-5 order-md-first mt-3 mb-3 artists-picture">  
                             {% if category.name == category.name %}
                                 {% if category.image %}
                                     <a href="{{ category.image.url }}" target="_blank">
@@ -71,34 +71,28 @@
                     {% endfor %}
                 </div>
                 <div>
+                    <span class="mt-5">Collection</span>
                     <hr class="w-100">
                 </div>
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4">
-                            <div class="card h-100">
-                                {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid my-auto" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0"></p>
-                                </div>
-                                <div class="card-footer bg-white pt-4 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <a href="{% url 'product_detail' product.id %}" class="my-auto">
-                                                 <p class="mb-5 text-left">{{ product.name }}</p>
-                                            </a> 
+                            <a href="{% url 'product_detail' product.id %}">
+                                <div class="card h-100">
+                                    {% if product.image %}
+                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    {% else %}
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    {% endif %}
+                                    <div class="card-footer bg-white pt-0 pl-1 text-left">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="mt-5 mb-5 text-left">{{ product.name }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">

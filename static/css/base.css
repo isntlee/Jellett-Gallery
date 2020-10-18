@@ -3,12 +3,17 @@ html {
 }
 
 body {
+    
     color: #555;
     font-family: 'Lato';
 }
 
 span {
     white-space: pre-wrap;
+}
+
+.nav-link {
+    padding: .5rem .35rem;
 }
 
 /* #footer {
@@ -83,6 +88,8 @@ span {
 
 .main-logo-link {
     width: fit-content;
+    /* color: red !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;  */
 }
 
 .shop-now-button {
@@ -162,9 +169,37 @@ a.category-badge > span.badge:hover {
 
 }
 
-.card-img-top {
-    width: 90%;
+a:link {
+  color: #555;
 }
+
+a:visited {
+  color: #555;
+}
+
+a:hover {
+  color: #555;
+  text-decoration: none;
+}
+
+a:active {
+  color: #000;
+}
+
+.card{
+    border: 0px;
+}
+
+.card-footer{
+    border-top: 0px;
+}
+
+.card-img-top {
+    top: 0; 
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+} 
 
 .btt-button {
     height: 42px;
