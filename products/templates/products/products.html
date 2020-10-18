@@ -26,9 +26,9 @@
         </div>
         <div class="row">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2">
+                <div class="row mb-2">
                     {% if search_term %}
-                        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="col-12  offset-7 col-md-5 mb-5 order-md-last d-flex justify-content-center justify-content-md-end">
                             <div class="sort-select-wrapper w-50">
                                 <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
@@ -44,20 +44,26 @@
                             </div>
                         </div>
                     {% endif %}
-                    <div class="col-12 col-md-6 order-md-first artists-bio">
-                        <p class="text-muted mt-3 mb-3 text-center text-md-left">
-                            {% for category in current_categories %}      
-                                {% if category.name == category.name %}
-                                    <span class="artists-bio-text">{{category.description}}</span>
-                                {% endif %}
-                            {% endfor %}
-                            {% if search_term %} Search results for <strong>'{{ search_term }}'</strong>{% endif %}
-                        </p>
-                    </div>
+
+                    {% for category in current_categories %}      
+                        {% if category.name == category.name %}
+                        <div class="col-12 col-md-6 order-md-first artists-bio">
+                            <p class="text-muted mt-3 mb-3 text-center text-md-left">
+                            <span class="artists-bio-text">{{category.description}}</span>
+                            </p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if search_term %}
+                        <div class="ml-3"> Search results for<strong>&nbsp'{{ search_term }}'</strong>
+                        </div>
+                    {% endif %}
+
                     {% for category in current_categories %} 
-                    <div class="col-12 offset-1 col-md-5 order-md-first mt-3 mb-3 artists-picture">  
-                            {% if category.name == category.name %}
-                                {% if category.image %}
+                        {% if category.name == category.name %}
+                            {% if category.image %}
+                                <div class="col-12 offset-1 col-md-5 order-md-first mt-3 mb-3 artists-picture"> 
                                     <a href="{{ category.image.url }}" target="_blank">
                                         <img class="card-img-top img-fluid" src="{{ category.image.url }}" alt="{{ category.image }}">
                                     </a>
@@ -65,15 +71,21 @@
                                     <a href="">
                                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.image }}">
                                     </a>
-                                {% endif %}
+                                </div>
                             {% endif %}
-                    </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
-                <div>
-                    <span class="mt-5">Collection</span>
-                    <hr class="w-100">
-                </div>
+
+                {% for category in current_categories %} 
+                    {% if category.name == category.name %}
+                    <div>
+                        <span class="mt-5">Collection</span>
+                        <hr class="w-100">
+                    </div>
+                    {% endif %}
+                {% endfor %}
+
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4">
@@ -87,7 +99,7 @@
                                     <div class="card-footer bg-white pt-0 pl-1 text-left">
                                         <div class="row">
                                             <div class="col">
-                                                <p class="mt-5 mb-5 text-left">{{ product.name }}</p>
+                                                <p class="mt-4 mb-5 text-left">{{ product.name }}</p>
                                             </div>
                                         </div>
                                     </div>
