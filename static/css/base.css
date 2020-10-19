@@ -3,9 +3,9 @@ html {
 }
 
 body {
-    
     color: #555;
     font-family: 'Lato';
+    overflow-x: hidden;
 }
 
 span {
@@ -22,8 +22,7 @@ span {
 
 /* Styling for home page */
 .home-carousel-item {
-  height: 93vh;
-  width: 100vw;
+  height: 90vh;
 }
 
 .carousel-image {
@@ -33,17 +32,12 @@ span {
 }
 
 #carousel-img-1 {
-  background-image: url("/media/cottonwoods.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),  url("/media/Beatriz%20Milhazes%20-%20Beleza%20Pura%20%282006%29.jpg");
   background-position: center 50%;
 }
 
 #carousel-img-2 {
-  background-image: url("/media/More%20planning%20than%20chance.jpg");
-  background-position: center 50%;
-}
-
-#carousel-img-3 {
-  background-image: url("/media/Sacred%20World.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .1), rgba(255, 255, 255, .1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/media/Georgia%20O%27Keeffe%20-%20Lake%20George%20Reflection%20%281922%29.jpg");
   background-position: center 50%;
 }
 
@@ -163,8 +157,8 @@ a.category-badge > span.badge:hover {
     height: 80vh;
 }
 
-.artists-bio-text {
-
+.artistList {
+    line-height: 110%;
 }
 
 a:link {
@@ -215,6 +209,10 @@ a:active {
 
 input[name='q']::placeholder {
     color: #aab7c4;
+}
+
+.qty_input {
+    visibility: hidden
 }
 
 /* ------------------------------- bootstrap toasts */
