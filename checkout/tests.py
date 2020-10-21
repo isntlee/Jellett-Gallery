@@ -10,5 +10,5 @@ from .models import Order, OrderLineItem
 class TestOrder(TestCase):
     """ Testing the Order model """
     def test_order(self):
-        string = Order(id = "1", date = "2020-03-20 18:06:34.021189+00:00", first_name = "Test name", last_name = "Test last")
-        self.assertEqual(str(string), "1-2020-03-20 18:06:34.021189+00:00-Test name-Test last")
+        string = Order(id = "1", date = "2020-03-20 18:06:34.021189+00:00", full_name="Test_name")
+        self.assertEqual(str(string), "1-2020-03-20 18:06:34.021189+00:00-Test_name")

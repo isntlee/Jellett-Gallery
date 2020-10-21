@@ -45,13 +45,25 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if product_count %}
-                                        {{ product_count }}
-                                    {% endif %}
-                        <!-- This can't be right, way too hacky -->
-                                </p>
+
+                                <div class="stack-icons">
+                                    <strong class="stack-overlay">
+                                        {% if product_count %}
+                                            {{ product_count }}
+                                        {% endif %}
+                                    </strong>
+                                    <img src="/media/shopping-bag.png" class="stack-base">  
+                                </div>
+
+                                <!-- <span class="fa-stack"> 
+                                    <span class="fa fa-shopping-bag fa-stack-2x"></span>
+                                    <strong class="fa-stack-1x text-white">
+                                        {% if product_count %}
+                                            {{ product_count }}
+                                        {% endif %}
+                                    </strong>  
+                                </span>  -->
+
                             </div>
                         </a>
                     </li>
