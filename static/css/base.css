@@ -25,7 +25,13 @@ span img {
 
 .fa-stack-1x {
     font-size: 0.6em!important;
-    top: 1.5vh;
+    top: 1.6vh;
+}
+
+.form-control:focus {
+  box-shadow: none!important;
+  border-color: #D5D8DC;
+  background-color: white;
 }
 
 .nav-link {
@@ -83,6 +89,10 @@ span img {
     opacity: 1 !important;
 } */
 
+.dropdown-item {
+    padding: .25rem .01rem!important;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -99,6 +109,7 @@ span img {
 .main-logo-link {
     width: fit-content;
 }
+
 
 .shop-now-button {
     background: black;

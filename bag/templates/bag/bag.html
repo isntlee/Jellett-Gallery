@@ -53,7 +53,7 @@
                                         <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><strong>Click Here to Remove</strong></small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0 float-right">${{ item.product.offer | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0 float-right">EUR{{ item.product.offer}}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -71,7 +71,7 @@
                                         <span class="text-uppercase">Keep Browsing</span>
                                     </a>
                                     <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="text-uppercase">Make Bid</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
                                         </span>
