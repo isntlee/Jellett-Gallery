@@ -8,28 +8,28 @@ body {
     overflow-x: hidden;
 }
 
-span {
+/* This will have to be sorted  */
+span img {
     white-space: pre-wrap;
+}
+
+.fa-user {
+    font-size: 1.5em!important;
+}
+
+.fa-stack-2x {
+   font-size: 1.5em!important;
+   color: black!important; 
+   top: 0vh;
+}
+
+.fa-stack-1x {
+    font-size: 0.6em!important;
+    top: 1.5vh;
 }
 
 .nav-link {
     padding: .5rem .35rem;
-}
-
-.stack-icons {
-    position: relative;
-}
-
-.stack-base {
-    z-index: 9999;
-    color: black;
-    height: 3vh;
-}
-
-.stack-overlay {
-    position: absolute;
-    color: white;
-    z-index: 1;
 }
 
 /* #footer {
