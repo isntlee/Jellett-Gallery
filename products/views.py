@@ -42,7 +42,7 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't really enter anything searchable")
+                messages.error(request, "You didn't enter anything searchable")
                 return redirect(reverse('artists'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
