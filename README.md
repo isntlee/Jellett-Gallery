@@ -156,7 +156,7 @@ The core ambition of the site is to make the material/sagas as interesting as po
 
 ## Technologies
 
-- [Gitpod](https://www.gitpod.io/) - Used as my IDE for coding.
+- [Gitpod](https://www.gitpod.io/) - Used as my IDE for development.
 - [GitHub](https://github.com/) - Used as remote storage of my code.
 - [GIMP](https://www.gimp.org/) - Used for editing images.
 - [TinyPNG](https://tinypng.com/) - Used to compress images for faster loading.
@@ -167,21 +167,23 @@ The core ambition of the site is to make the material/sagas as interesting as po
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) - Used as the base for cascading styles.
 - [Javascript](https://www.javascript.com/) - Used as primary JavaScript functionality.
 - [jQuery 3.5.0](https://code.jquery.com/jquery/) - Used as secondary JavaScript functionality.
-- [GoogleMaps API](https://developers.google.com/maps) - Used as the interactive map.
-- [Materialize 1.0.0](https://materializecss.com/) - Used as the overall design framework.
+- [Bootstrap 4.5.2](https://www.bootstrapcdn.com/) to simplify the structure of the website and make the website responsive easily.
 
 ### Back-End
 
-- **Flask**
-    - [Flask 1.1.2](http://flask.pocoo.org/) - Used as the microframework.
-    - [Jinja 2.11](http://jinja.pocoo.org/docs/2.10/) - Used for templating with Flask.
-    - [Bcrypt 3.1.7](https://www.npmjs.com/package/bcrypt) - Bcrypt is a password-hashing function.
+- **Django**
+    - [Django 3.1.1](https://www.djangoproject.com/) - Used as python web framework for rapid development and clean design.
+    - [Django Storages](https://django-storages.readthedocs.io/en/latest/) a collection of custom storage backends with Django.
+    - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style Django forms.
 - **Heroku**
     - [Heroku](https://www.heroku.com) - Used for the app hosting.
+- **Databases**
+    - [PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
+    - [SQlite3](https://www.sqlite.org/index.html) for development database, provided by Django.
 - **Python**    
     - [Python 3.8.5](https://www.python.org/) - Used as for back-end programming.
-    - [MongoDB Atlas](https://www.mongodb.com/) - Used to store my database onilne.
-    - [PyMongo 3.10.1](https://api.mongodb.com/python/current/) - Used as the Python API for MongoDB.
+    - [Pillow](https://pillow.readthedocs.io/en/stable/) as python imaging library to aid in processing.
+    - [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
 
 --
 
@@ -214,6 +216,9 @@ The core ambition of the site is to make the material/sagas as interesting as po
 - There are two varieties of tests: route/form tests watching clear behaviour and tests verifying actions. 
     - Behavior: testing routes/forms, asserting that all cases behave correctly and returning a request succeed status 200. 
     - Verify actions: the tests created concern writing/deleting from the database; users, sagas, etc, etc. 
+
+**Travis**
+- [Travis](https://travis-ci.org/) was used to provide continuous testing integration with the site in deployment.
 
 ### Compatibility
 
