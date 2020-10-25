@@ -8,8 +8,8 @@ class TestProductViews(TestCase):
     def setUp(self):
         category = Category(name='maria_sharia')
         category.save()
-        valid_product = Product(name='name', description='description', offer='99.00')
-        valid_product.save()
+        product = Product(name='name', description='description', offer='99.00')
+        product.save()
 
     def test_query_returns_results(self):
         response = self.client.get('/?query=anything')
@@ -28,10 +28,20 @@ class TestProductViews(TestCase):
         self.assertTemplateUsed(response, 'includes/main-nav.html')
         self.assertTrue(response, 'home/index.html')
 
-    # def test_render_product_detail(self):
-    #     valid_product = Product.objects.get(id=4)
-    #     response = self.client.get(f'/products/{id}/')
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'products/product_detail.html')
-    #     self.assertTrue(response.context['product'])
+    def test_render_product_detail(self):
+        product = Product.objects.get()
+        response = self.client.get(f'/products/{product.id}/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/product_detail.html')
+        self.assertTrue(response.context['product'])
 
+    def test_render_category(self):
+        category = Category.objects.get()
+        response = self.client.get(f'/products/?category={category.id}/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
+
+    def test_render_404_not_found(self):
+        response = self.client.get('/product/0/')
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed('404.html')
