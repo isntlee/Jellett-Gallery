@@ -9,7 +9,7 @@ body {
 }
 
 /* This will have to be sorted  */
-span img {
+span {
     white-space: pre-wrap;
 }
 
@@ -177,11 +177,19 @@ a.category-badge > span.badge:hover {
 } */
 
 .artists-bio {
-    height: 80vh;
+    height: 100vh;
 }
 
 .artists-picture {
-    height: 80vh;
+    height: 70vh;
+}
+
+.artists-bio-text {
+    height: 70vh;
+}
+
+.artists-picture-image {
+    width: 40vw;
 }
 
 .artistList {
