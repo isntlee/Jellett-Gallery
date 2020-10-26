@@ -65,7 +65,7 @@ body {
 
 .carousel-caption {
    position: absolute;
-   left: -30vw;
+   left: -20vw;
    bottom: 5vh;
 }
 
@@ -109,7 +109,6 @@ body {
 .main-logo-link {
     width: fit-content;
 }
-
 
 .shop-now-button {
     background: black;
@@ -413,8 +412,25 @@ input[name='q']::placeholder {
 }
 
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
+ @media (max-width: 1010px) {
+
+    .list-inline-item:not(:last-child) {
+    margin-right: .0rem;
+    }
+
+    .carousel-caption {
+    left: -10vw;
+    }
+ }
+
+/* #topnav > div.col-12.col-lg-8.my-auto.py-0 > ul > li:nth-child(6) > form > div.input-group {
+    width: 100%;
+}  */
+
+
+
+/* fixed top navbar only on medium and up  */
+@media (min-width: 767px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -426,10 +442,11 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 95px;
     }
+
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     .header-container {
         padding-top: 116px;
     }
@@ -437,4 +454,8 @@ input[name='q']::placeholder {
     body {
         height: calc(100vh - 116px);
     }
-}
+
+    .carousel-caption {
+    left: 15vw;
+    }
+} 
