@@ -9,9 +9,9 @@ body {
 }
 
 /* This will have to be sorted  */
-span {
+/* span img {
     white-space: pre-wrap;
-}
+} */
 
 .fa-user {
     font-size: 1.5em!important;
@@ -186,6 +186,7 @@ a.category-badge > span.badge:hover {
 
 .artists-bio-text {
     height: 70vh;
+    white-space: pre-wrap;
 }
 
 .artists-picture-image {

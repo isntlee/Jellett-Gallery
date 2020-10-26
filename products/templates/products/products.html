@@ -47,7 +47,7 @@
                     {% for category in current_categories %}      
                         {% if category.name == category.name %}
                         <div class="col-12 col-md-6 order-md-first artists-bio">
-                            <p class="text-muted mt-5 mb-5 text-center text-md-left">
+                            <p class="text-muted mt-4 mb-4 text-center text-md-left">
                             <span class="artists-bio-text">{{category.description}}</span>
                             </p>
                         </div>
@@ -57,7 +57,7 @@
                     {% for category in current_categories %} 
                         {% if category.name == category.name %}
                             {% if category.image %}
-                                <div class="col-12 offset-1 col-md-5 order-md-first mt-5 mb-5 artists-picture"> 
+                                <div class="col-12 offset-1 col-md-5 order-md-first mt-4 mb-4 artists-picture"> 
                                     <a href="{{ category.image.url }}" target="_blank">
                                         <img class="artists-picture-image card-img-top img-fluid" src="{{ category.image.url }}" alt="{{ category.image }}">
                                     </a>
@@ -75,7 +75,7 @@
                     {% if category.name == category.name %}
                     <div>
                         <span class="mt-5">Collection</span>
-                        <hr class="w-100">
+                        <hr class="w-100 text-black">
                     </div>
                     {% endif %}
                 {% endfor %}
