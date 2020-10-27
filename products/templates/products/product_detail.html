@@ -12,9 +12,23 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="d-sm-none">
+                <div class="image-container">
+                    {% if product.image %}
+                    <h5><strong><p class="mb-5 text-center">{{ product.name }}</p></strong></h5>
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid pl-4 pr-4" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 offset-lg-2">
                 <div class="product-details-container mb-5 mt-md-5 mt-5">
-                    <h5><p class="mb-0">{{ product.name }}</p></h5>
+                    <h5><p class="d-none d-sm-block mb-0">{{ product.name }}</p></h5>
                     <p class="lead mb-0 text-left font-weight-bold">Estimate: EUR {{ product.offer }}</p>
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
@@ -46,28 +60,28 @@
                                     </div>
                                 </div>
                             </div>
-                                <a href="{% url 'products' %}?category={{ product.category }}" class="btn btn-outline-black rounded-0 mt-5">
+                                <a href="{% url 'products' %}?category={{ product.category }}" class="btn btn-outline-black mt-5">
                                     <span class="icon"><i class="fas fa-chevron-left"></i></span>
-                                    <span class="text-uppercase">Keep Browsing</span>
+                                    <span class="text-uppercase bid-buttons">Keep Browsing</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bid">
+                                <input type="submit" class="btn btn-black text-uppercase bid-buttons mt-5" value="Add to Bid">
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                    <div class="image-container my-5">
-                        {% if product.image %}
-                            <a href="{{ product.image.url }}" target="_blank">
-                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </a>
-                            {% else %}
-                            <a href="">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                            </a>
-                        {% endif %}
-                    </div>
+            <div class="col-12 col-sm-6 col-md-6 offset-lg-1 col-lg-4 d-none d-sm-block">
+                <div class="image-container my-5">
+                    {% if product.image %}
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

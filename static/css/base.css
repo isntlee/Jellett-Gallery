@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    color: #555;
+    color: #444;
     font-family: 'Lato';
     overflow-x: hidden;
 }
@@ -459,9 +459,10 @@ input[name='q']::placeholder {
     }
 
     .artists-bio-text {
-    font-size: .65rem;
+    color: #444;
+    font-size: .60rem;
     font-weight: 400;
-    line-height: 0.82;
+    line-height: 0.75;
     }
 
 }
@@ -499,6 +500,11 @@ input[name='q']::placeholder {
     }
 
     .carousel-caption {
-    left: 15vw;
+        left: 15vw;
     }
+
+    .bid-buttons {
+        font-size: .85rem;
+    }
+
 } 
