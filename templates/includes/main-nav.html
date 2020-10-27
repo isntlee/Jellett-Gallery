@@ -1,97 +1,165 @@
 <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white pt-lg-3 pb-lg-3 d-none d-md-flex">
-            <div class="col-12 col-sm-7 col-md-5 col-lg-4 my-auto py-0 py-lg-0 text-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h3 class="logo-font my-0 ml-3 text-black"><strong>Jellett</strong> Gallery</h3>
-                </a>
-            </div>
-            <div class="col-12 col-sm-5 col-md-7 col-lg-8 my-auto py-0">
-                <ul class="list-inline list-unstyled text-right text-lg-right my-0">
-                    <li class="list-inline-item">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-0 ml-0" href="{% url 'artists' %}" id="clothing-link" aria-haspopup="true" aria-expanded="false">
-                            Artists
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-0 ml-0" href="{% url 'exhibitions' %}" id="homeware-link" aria-haspopup="true" aria-expanded="false">
-                            Exhibitions
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-0" href="{% url 'about' %}" id="#" aria-haspopup="true" aria-expanded="false">
-                            About
-                        </a>
-                    </li>
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <!-- <div class="text-center"> -->
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                            <!-- </div> -->
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                     <a href="{% url 'add_product' %}" class="dropdown-item">Collections</a>
-                                {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+    <div id="topnav" class="row bg-white pt-lg-3 pb-lg-3 d-none d-md-flex">
+        <div class="col-12 col-sm-7 col-md-5 col-lg-4 my-auto py-0 py-lg-0 text-left">
+            <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <h3 class="logo-font my-0 ml-3 text-black"><strong>Jellett</strong> Gallery</h3>
+            </a>
+        </div>
+        <div class="col-12 col-sm-5 col-md-7 col-lg-8 my-auto py-0">
+            <ul class="list-inline list-unstyled text-right text-lg-right my-0">
+                <li class="list-inline-item">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-0 ml-0" href="{% url 'artists' %}" id="clothing-link" aria-haspopup="true" aria-expanded="false">
+                        Artists
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-0 ml-0" href="{% url 'exhibitions' %}" id="homeware-link" aria-haspopup="true" aria-expanded="false">
+                        Exhibitions
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="logo-font font-weight-bold nav-link text-black mr-0" href="{% url 'about' %}" id="#" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                </li>
+                <li class="list-inline-item dropdown">
+                    <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <!-- <div class="text-center"> -->
+                            <div><i class="fas fa-user fa-lg"></i></div>
+                        <!-- </div> -->
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Collections</a>
                             {% endif %}
-                        </div>
-                    </li>
-                    <!-- You'll have to add a world full of media queries for this - complete waste of time -->
-                    <li class="list-inline-item">
-                        <span class="fa-stack fa-lg">
-                            <a href="{% url 'view_bag' %}" class="fa fa-shopping-bag fa-stack-2x">
-                                <strong class="fa-stack-1x fa-inverse">
-                                    {% if product_count %}
-                                        {{ product_count }}
-                                    {% endif %}
-                                </strong>  
-                            </a>
-                        </span>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-right">
-                                <div><i class="fas fa-search fa-lg"></i></div>
-                            </div>
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+                <!-- You'll have to add a world full of media queries for this - complete waste of time -->
+                <li class="list-inline-item">
+                    <span class="fa-stack fa-lg">
+                        <a href="{% url 'view_bag' %}" class="fa fa-shopping-bag fa-stack-2x">
+                            <strong class="fa-stack-1x fa-inverse">
+                                {% if product_count %}
+                                    {{ product_count }}
+                                {% endif %}
+                            </strong>  
                         </a>
-                        <div class="dropdown-menu border-0 w-100 pt-2 pb-0 pl-3 pr-2 rounded-0 my-0" aria-labelledby="mobile-search">
-                            <form class="form" method="GET" action="{% url 'products' %}">
-                                <div class="input-group w-100">
-                                    <input class="form-control" type="text" name="q" placeholder="" autocomplete="off">
-                                    <div class="input-group-append">
-                                        <button class="form-control" type="submit">
-                                            <span class="icon">
-                                                <i class="fas fa-search text-black"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                    </span>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="text-right">
+                            <div><i class="fas fa-search fa-lg"></i></div>
                         </div>
-                         <div class="d-none d-lg-block">
-                            <form method="GET" action="{% url 'products' %}">
-                                <div class="input-group border-black rounded">
-                                    <input class="form-control " type="text" name="q" placeholder="" autocomplete="off">
-                                    <div class="input-group-append">
-                                        <button class="form-control" type="submit">
-                                            <span class="icon">
-                                                <i class="fas fa-search text-black"></i>
-                                            </span>
-                                        </button>
-                                    </div>
+                    </a>
+                    <div class="dropdown-menu border-0 w-100 pt-2 pb-0 pl-3 pr-2 rounded-0 my-0" aria-labelledby="mobile-search">
+                        <form class="form" method="GET" action="{% url 'products' %}">
+                            <div class="input-group w-100">
+                                <input class="form-control" type="text" name="q" placeholder="" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button class="form-control" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search text-black"></i>
+                                        </span>
+                                    </button>
                                 </div>
-                            </form>
+                            </div>
+                        </form>
+                    </div>
+                        <div class="d-none d-lg-block">
+                        <form method="GET" action="{% url 'products' %}">
+                            <div class="input-group border-black rounded">
+                                <input class="form-control " type="text" name="q" placeholder="" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button class="form-control" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search text-black"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="navbar-sm" class="row bg-white pt-lg-3 pb-lg-3 d-md-none">
+        <div class="col-8 col-sm-8 col-xs-8 my-auto py-0 py-lg-0 text-left">
+            <a href="{% url 'home' %}" class="">
+                <h3 class="logo-font my-0 text-black"><strong>Jellett</strong> Gallery</h3>
+            </a>
+        </div>
+        <div class="col-4 col-sm-4 col-xs-4 my-auto py-0 text-right">
+            <li class="list-inline-item dropdown">
+                <a class="text-black nav-link .d-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="text-left">
+                        <div><i class="fas fa-bars fa-lg"></i></div>
+                        <p class="my-0"></p>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    <a href="{% url 'add_product' %}" class="dropdown-item">Artists</a>
+                    <a href="" class="dropdown-item">Exhibtions</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">About</a>
+                    <a href="{% url 'view_bag' %}" class="dropdown-item">View Bid</a>
+                </div>
+            </li>
+            <li class="list-inline-item dropdown">
+                <a class="text-black nav-link .d-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="text-left">
+                        <div><i class="fas fa-user fa-lg"></i></div>
+                        <p class="my-0"></p>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'add_product' %}" class="dropdown-item">Collections</a>
+                        {% endif %}
+                        <a href="" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+            </li>
+            <li class="list-inline-item">
+                <a class="text-black nav-link .d-none" href="#" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="text-left">
+                        <div><i class="fas fa-search fa-lg"></i></div>
+                        <p class="my-0"></p>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0 w-150 my-0" aria-labelledby="mobile-search">
+                    <form class="form" method="GET" action="{% url 'products' %}">
+                        <div class="input-group w-150">
+                            <input class="form-control" type="text" name="q" placeholder="" autocomplete="off">
+                            <div class="input-group-append">
+                                <button class="form-control" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search text-black"></i>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
-                    </li>
-                </ul>
-            </div>
+                    </form>
+                </div>
+            </li>
         </div>
-        <div>
-            <hr class="w-100 mt-0">
-        </div>
+    </div>
+    <div>
+        <hr class="w-100 mt-0">
+    </div>
 </header>

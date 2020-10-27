@@ -419,9 +419,28 @@ input[name='q']::placeholder {
     }
 
     .carousel-caption {
-    left: -10vw;
+    left: -3vw;
     }
  }
+
+@media (max-width: 400px) {
+     
+     h2 {
+    font-size: 25px;
+    }
+    
+     h3 {
+    font-size: 20px;
+    }
+
+    h5 {
+    font-size: 15px;
+    }
+
+    .nav-link {
+    padding : .5rem .07rem
+    }
+}
 
 /* #topnav > div.col-12.col-lg-8.my-auto.py-0 > ul > li:nth-child(6) > form > div.input-group {
     width: 100%;
