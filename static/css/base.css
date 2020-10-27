@@ -421,6 +421,23 @@ input[name='q']::placeholder {
     .carousel-caption {
     left: -3vw;
     }
+
+    .artists-bio-text {
+    font-size: .83rem;
+    font-weight: 400;
+    line-height: 1.1;
+    }
+
+ }
+
+ @media (max-width: 865px) {
+
+    .artists-bio-text {
+    font-size: .72rem;
+    font-weight: 400;
+    line-height: 0.9;
+    }
+
  }
 
 @media (max-width: 400px) {
@@ -440,6 +457,13 @@ input[name='q']::placeholder {
     .nav-link {
     padding : .5rem .07rem
     }
+
+    .artists-bio-text {
+    font-size: .65rem;
+    font-weight: 400;
+    line-height: 0.82;
+    }
+
 }
 
 /* #topnav > div.col-12.col-lg-8.my-auto.py-0 > ul > li:nth-child(6) > form > div.input-group {
