@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Bid Details</h2>
+                <h2 class="logo-font mb-4 bid-logo">Bid Details</h2>
                 <hr>
             </div>
         </div>
@@ -23,26 +23,26 @@
             <div class="col">
                 {% if bag_items %}
                     <div class="table-responsive rounded">
-                        <table class="table table-xs table-borderless">
+                        <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
-                                    <th class="float-right mr-1" scope="col">Offer</th>
+                                    <th class="float-right mr-1 bid-column" scope="col">Offer</th>
                                 </tr>
                             </thead>
                             {% for item in bag_items %}
                                 <tr>
-                                    <td class="p-3 w-25">
+                                    <td class="p-3 w-25 bid-picture">
                                         {% if item.product.image %}
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                         {% else %}
                                         <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                         {% endif %}
                                     </td>
-                                    <td class="py-3">
+                                    <td class="py-3 bid-name">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p></p>
                                         <p class="my-0"> by {{ item.product.category.friendly_name }}</p>
@@ -50,27 +50,27 @@
                                     <td class="py-3">
                                     </td>
                                     <td class="py-3 w-25">
-                                        <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><strong>Click Here to Remove</strong></small></a>
+                                        <a class="remove-item text-danger bid-remove" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><strong>Click Here to Remove</strong></small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0 float-right">EUR{{ item.product.offer}}</p>
+                                        <p class="my-0 float-right bid-offer">EUR{{ item.product.offer}}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h4 class="mt-4"><strong>Total:EUR{{ total|floatformat:2 }}</strong></h4>
+                                    <h4 class="mt-4 bid-total"><strong>Total:EUR{{ total|floatformat:2 }}</strong></h4>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'artists' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <a href="{% url 'artists' %}" class="btn btn-outline-black btn-lg bid-buttons">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Browsing</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn btn-black btn-lg bid-buttons">
                                         <span class="text-uppercase">Make Bid</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -82,7 +82,7 @@
                     </div>
                 {% else %}
                     <p class="lead mb-5">Your bid is cleared</p>
-                    <a href="{% url 'artists' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                    <a href="{% url 'artists' %}" class="btn btn-outline-black btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
