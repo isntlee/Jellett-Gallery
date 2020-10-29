@@ -42,17 +42,19 @@ body {
 } */
 
 .exhibition-title {
-    font-size: max(2.7vw, 2px);
+    font-size: max(2.5vw, 2px);
     padding-bottom: .3vw;
+    padding-top: max(2.5vw, 2px);
 }
 
 .exhibition-detail {
-    font-size: 2.2vw;
+    font-size: 1.9vw;
     padding-bottom: .5vw;
 }
 
 .exhibition-date {
     font-size: 1vw;
+    padding-top: 1vw;
 }
 
 .exhibition-paragraph {
@@ -472,6 +474,86 @@ input[name='q']::placeholder {
     line-height: 0.9;
     }
 
+/* fixed top navbar only on medium and up  */
+@media (min-width: 767px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 95px;
+    }
+
+}
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 767px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vw - 116px);
+    }
+
+    .carousel-caption {
+        left: 15vw;
+    }
+
+    .bid-buttons {
+        font-size: .75rem;
+    }
+
+    .bid-total{
+        font-size: 95%;  
+    }
+
+    .exhibition-title {
+        font-size: max(4.0vw, 2px);
+        padding-bottom: .6vw;
+}
+
+.exhibition-detail {
+        font-size: 3.3vw;
+        padding-bottom: .5vw;
+}
+
+.exhibition-date {
+        font-size: 2vw;
+        padding-top: 1vw;
+    }
+
+.exhibition-paragraph {
+        font-size: 2.2vw;
+        padding-bottom: .3vw;
+    }
+
+} 
+
+@media (max-width: 577px) {
+
+    .exhibition-title {
+        font-size: max(5.0vw, 2px);
+        padding-bottom: .6vw;
+    }
+
+    .exhibition-detail {
+        font-size: 4.0vw;
+        padding-bottom: .5vw;
+    }
+
+    .exhibition-date {
+        font-size: 2.7vw;
+        padding-top: 1vw;
+    }
+
+    .exhibition-paragraph {
+        font-size: 2.9vw;
+        padding-bottom: .3vw;
+    } 
  }
 
  @media (max-width: 450px) {
@@ -503,6 +585,26 @@ input[name='q']::placeholder {
     .bid-buttons {
     font-size: 75%;
     }
+
+    .exhibition-title {
+    font-size: max(5.5vw, 2px);
+    padding-bottom: .6vw;
+    }
+
+    .exhibition-detail {
+    font-size: 4.5vw;
+    padding-bottom: .5vw;
+    }
+
+    .exhibition-date {
+    font-size: 3.2vw;
+    padding-top: 1vw;
+    }
+
+    .exhibition-paragraph {
+    font-size: 3.4vw;
+    padding-bottom: .3vw;
+    } 
 }
 
 @media (max-width: 400px) {
@@ -595,49 +697,3 @@ input[name='q']::placeholder {
     font-size: 65%;
     } */
 }
-
-/* #topnav > div.col-12.col-lg-8.my-auto.py-0 > ul > li:nth-child(6) > form > div.input-group {
-    width: 100%;
-}  */
-
-
-
-/* fixed top navbar only on medium and up  */
-@media (min-width: 767px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 95px;
-    }
-
-}
-
-/* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 767px) {
-    .header-container {
-        padding-top: 116px;
-    }
-
-    body {
-        height: calc(100vw - 116px);
-    }
-
-    .carousel-caption {
-        left: 15vw;
-    }
-
-    .bid-buttons {
-        font-size: .75rem;
-    }
-
-    .bid-total{
-        font-size: 95%;  
-    }
-
-} 
