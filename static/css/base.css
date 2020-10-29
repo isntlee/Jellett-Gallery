@@ -1,17 +1,17 @@
 html {
-    height: 120vw;
+    height: 120vh;
 }
 
 body {
     color: #444;
-    font-family: 'Lato';
+    font-family: 'Open Sans';
     overflow-x: hidden;
 }
 
-/* This will have to be sorted  */
-/* span img {
-    white-space: pre-wrap;
-} */
+.main-logo-link {
+    color: #444!important;
+    font-family: 'Roboto';
+}
 
 .fa-user {
     font-size: 1.5em!important;
@@ -25,7 +25,7 @@ body {
 
 .fa-stack-1x {
     font-size: 0.6em!important;
-    top: 1.6vw;
+    top: 0.7vw;
 }
 
 .form-control:focus {
@@ -62,17 +62,22 @@ body {
     padding-bottom: .3vw;
 }
 
+.exhibition-picture {
+    font-size: 0.75vw;
+    padding-top: 0.375vw;
+}
+
 .exhibitions-details {
     color: #111;
 }
 
-.footer-bottom {
+/* .footer-bottom {
    position:relative!important;
-   height: 150px!important;
-   bottom: -140px!important;
+   height: 0px!important;
+   bottom: 0px!important;
    width:100%!important;
    color: #222;
-}
+} */
 
 .socials {
     color: #111!important
@@ -80,11 +85,11 @@ body {
 
 /* Styling for home page */
 .home-carousel-item {
-  height: 90vw;
+  height: 80vh;
 }
 
 .carousel-image {
-  height: 110%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -360,8 +365,8 @@ input[name='q']::placeholder {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
+  /* .container {
+    max-width: 80%; */
   }
 }
 
@@ -449,7 +454,7 @@ input[name='q']::placeholder {
 
  @media (min-width: 1400px) {
 
-    .exhibition-title {
+.exhibition-title {
     font-size: max(2.2vw, 2px);
     padding-bottom: .3vw;
     padding-top: max(2vw, 2px);
