@@ -2,7 +2,7 @@
 
 # **Jellett Gallery**
 
-This site was created to fill a, testing if changes made with loaddata 
+This site was created to fill a, testing to see if postgres, now works or not
 
 ---
 
