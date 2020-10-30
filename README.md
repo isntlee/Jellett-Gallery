@@ -2,7 +2,7 @@
 
 # **Jellett Gallery**
 
-This site was created to fill a... 
+This site was created to fill a, testing if changes made with loaddata 
 
 ---
 
