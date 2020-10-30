@@ -73,8 +73,8 @@ body {
 
 /* .footer-bottom {
    position:relative!important;
-   height: 0px!important;
-   bottom: 0px!important;
+   height: 20vh!important;
+   bottom: -20vh!important;
    width:100%!important;
    color: #222;
 } */
@@ -85,7 +85,7 @@ body {
 
 /* Styling for home page */
 .home-carousel-item {
-  height: 80vh;
+  height: 90vh;
 }
 
 .carousel-image {
@@ -635,6 +635,10 @@ input[name='q']::placeholder {
     font-size: 3.4vw;
     padding-bottom: .3vw;
     } 
+
+    .carousel-caption {
+    bottom: 10vw;
+    }
 }
 
 @media (max-width: 400px) {
@@ -690,6 +694,10 @@ input[name='q']::placeholder {
     font-size: 80%;  
     }
 
+    .carousel-caption {
+    bottom: 12vw;
+    }
+
     /* .bid-buttons {
     font-size: 80%;
     } */
@@ -723,7 +731,12 @@ input[name='q']::placeholder {
     font-size: 80%;  
     }
 
+    .carousel-caption {
+    bottom: 15vw;
+    }
+
     /* .bid-buttons {
     font-size: 65%;
     } */
+    
 }
