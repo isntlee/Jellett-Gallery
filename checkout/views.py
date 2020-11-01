@@ -28,7 +28,7 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
+        messages.error(request, 'Sorry, your escrow cannot be \
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
@@ -72,9 +72,9 @@ def checkout(request):
 
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag"
-                        "wasn't found in our database. "
-                        "Please call us for assistance!")
+                        "One of the products in your bid"
+                        "wasn't found in our collection. "
+                        "Please call us as soon as possible")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
@@ -90,17 +90,26 @@ def checkout(request):
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(
-                request, "There's nothing in your bag at the moment")
+                request, "There's nothing to your bid at the moment")
             return redirect(reverse('artists'))
 
         current_bag = bag_contents(request)
-        total = current_bag['total']
-        stripe_total = round(total * 100)
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-            amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY,
-        )
+        if request.user.is_authenticated:
+            total = current_bag['total']
+            stripe_total = round(total * 100)
+            stripe.api_key = stripe_secret_key
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+                currency=settings.STRIPE_CURRENCY,
+                )
+        else:
+            delivery_total = current_bag['delivery_total']
+            stripe_total = round(delivery_total * 100)
+            stripe.api_key = stripe_secret_key
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+                currency=settings.STRIPE_CURRENCY,
+                )
 
         # Attempt to prefill the form with any"
         # "info the user maintains in their profile
@@ -165,8 +174,8 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
+    messages.success(request, f'Your bid has been successful \
+        {order_number} is your order number. And a confirmation \
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:

@@ -21,7 +21,7 @@
                 <hr>
                 <h2 class="logo-font mb-4">Thank You</h2>
                 <hr>
-                <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <p class="text-black">The order's details are below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
         </div>
 
@@ -157,25 +157,41 @@
 
                     <div class="row">
                         <div class="col">
-                            <small class="text-muted">Billing Info:</small>
+                            <small class="text-muted">Billing Details:</small>
                         </div>
                     </div>
 
                     <div class="row">
+                        {% if user.is_authenticated %}
                         <div class="col-12 col-md-4">
                             <p class="mb-0 text-black font-weight-bold">Post & Packaging</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">Included</p>
                         </div>
-                    </div>
-
-                    <div class="row">
+                        {% else %}
                         <div class="col-12 col-md-4">
-                            <p class="mb-0 text-black font-weight-bold">Total</p>
+                            <p class="mb-0 text-black font-weight-bold">Delivery</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-0">EUR{{ order.grand_total }}</p>
+                            <p class="mb-0">EUR{{ order.delivery_cost | floatformat:2 }}</p>
+                        </div>
+                        {% endif %} 
+                    </div>
+                    <div class="row">
+                        {% if user.is_authenticated %}
+                            <div class="col-12 col-md-4">
+                                <p class="my-0 mb-0 text-black font-weight-bold">Grand Total:</p>
+                            </div>
+                            <div class="col-12 col-md-8 text-md-right">
+                            <p class="my-0">EUR{{ order.order_total | floatformat:2 }}</p>
+                        {% else %}
+                            <div class="col-12 col-md-4">
+                                <p class="my-0 mb-0 text-black font-weight-bold">Grand Total:</p>
+                            </div>
+                            <div class="col-12 col-md-8 text-md-right">
+                            <p class="my-0"><strong>EUR{{ order.grand_total | floatformat:2 }}</strong></p>	
+                        {% endif %}
                         </div>
                     </div>
                 </div>
@@ -188,7 +204,7 @@
                         <span class="icon mr-2">
                             <i class="fas fa-angle-left"></i>
                         </span>
-                        <span class="text-uppercase">Back to Profile</span>
+                        <span class="text-uppercase">Back to your Account</span>
                     </a>
                 {% else %}
                     <a href="{% url 'artists' %}" class="btn btn-black rounded-0 my-2">

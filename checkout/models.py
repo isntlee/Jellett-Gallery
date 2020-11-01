@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models import Sum
 from django_countries.fields import CountryField
 from products.models import Product
+from django.conf import settings
 from profiles.models import UserProfile
 
 
@@ -48,8 +49,15 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(
                             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.grand_total = self.order_total
+
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+
+        self.grand_total = self.order_total + self.delivery_cost
         self.save()
+
+        # self.grand_total = self.order_total
+        # self.save()
 
     def save(self, *args, **kwargs):
         """
