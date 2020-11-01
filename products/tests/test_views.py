@@ -8,7 +8,8 @@ class TestProductViews(TestCase):
     def setUp(self):
         category = Category(name='maria_sharia')
         category.save()
-        product = Product(name='name', description='description', offer='99.00')
+        product = Product(name='name',
+                          description='description', offer='99.00')
         product.save()
 
     def test_query_returns_results(self):

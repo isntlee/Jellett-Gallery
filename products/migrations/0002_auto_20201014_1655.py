@@ -31,11 +31,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='category',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=''),
+            field=models.ImageField(blank=True,
+                                    null=True, upload_to=''),
         ),
         migrations.AddField(
             model_name='category',
             name='image_url',
-            field=models.URLField(blank=True, max_length=1024, null=True),
+            field=models.URLField(blank=True,
+                                  max_length=1024, null=True),
         ),
     ]

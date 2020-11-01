@@ -133,26 +133,26 @@ else:
         }
     }
 
-# DATABASES = {
-#         'default': dj_database_url.parse("postgres://nxihmhatkyappj:02611752e574f4c19d3eea40fdd3c1590b744a4e23772434c7caca35dfcce9d1@ec2-54-246-87-132.eu-west-1.compute.amazonaws.com:5432/detlhbt62c82aj")
-#     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': "django.contrib.auth.password_validation"
+        ".UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': "django.contrib.auth.password_validation"
+        ".MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': "django.contrib.auth.password_validation"
+        ".CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': "django.contrib.auth.password_validation"
+        ".NumericPasswordValidator",
     },
 ]
 
