@@ -1,7 +1,7 @@
 <header class="container-fluid fixed-top">
     <div id="topnav" class="row bg-white pt-lg-3 pb-lg-3 d-none d-md-flex">
         <div class="col-12 col-sm-7 col-md-5 col-lg-4 my-auto py-0 py-lg-0 text-left">
-            <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <a href="{% url'home'}"% class="nav-link main-logo-link">
                 <h3 class="logo-font my-0 ml-5"><strong>Jellett</strong> Gallery</h3>
             </a>
         </div>
@@ -33,7 +33,7 @@
                             {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Collections</a>
                             {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                         {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -159,7 +159,4 @@
             </li>
         </div>
     </div>
-    <!-- <div>
-        <hr class="w-100 mt-0">
-    </div> -->
 </header>

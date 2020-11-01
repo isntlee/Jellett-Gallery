@@ -108,6 +108,7 @@ body {
    position: absolute;
    left: -20vw;
    bottom: 5vw;
+   font-family: 'Lato'!important;
 }
 
 .carousel.carousel-fade .carousel-item {
@@ -368,7 +369,6 @@ input[name='q']::placeholder {
   /* .container {
     max-width: 80%; */
   }
-}
 
 /* Allauth form formatting */
 
@@ -734,9 +734,5 @@ input[name='q']::placeholder {
     .carousel-caption {
     bottom: 15vw;
     }
-
-    /* .bid-buttons {
-    font-size: 65%;
-    } */
-    
+  
 }
