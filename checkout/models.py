@@ -5,6 +5,8 @@ from django_countries.fields import CountryField
 from products.models import Product
 from django.conf import settings
 from profiles.models import UserProfile
+from django.shortcuts import get_object_or_404
+from products.models import Product
 
 
 class Order(models.Model):
@@ -52,7 +54,12 @@ class Order(models.Model):
                             Sum('lineitem_total'))['lineitem_total__sum'] or 0
 
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+
+        if request.user.is_authenticated:
+            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 1
+
+        else:
+            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 5
 
         self.grand_total = self.order_total + self.delivery_cost
         self.save()

@@ -24,16 +24,17 @@ def bag_contents(request):
             })
 
             if request.user.is_authenticated:
-                grand_total = total
-
+                delivery = 0
             else:
                 delivery = (total/delivery_percentage)
-                grand_total = delivery + total
+
+            grand_total = delivery + total
 
             print(bag)
             print(product)
             print(total)
             print(delivery)
+            print(grand_total)
 
     context = {
         'bag_items': bag_items,

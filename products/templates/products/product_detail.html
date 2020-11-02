@@ -43,9 +43,9 @@
                     <p class="mt-5 mb-5">Copyright held by the Artist</p>
                     {% if request.user.is_superuser %}
                         <small class="mt-5">
-                            <a class="text-primary" href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" onclick="sweetAlert_delete();">Delete</a>
                             <form action="{% url 'delete_product' product.id %}" method="POST" id="deleteForm"></form>
+                            <button class="text-primary btn p-0" href="{% url 'edit_product' product.id %}">Edit</button> 
+                            <button class="text-danger btn p-0" onclick="sweetAlert_delete();">Delete</button> 
                         </small>
                     {% endif %}
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -107,7 +107,7 @@
                 icon: "success",
                 });
             } else {
-                swal("The work is preserved still");
+                swal("This entry is preserved still");
             }
         })
     }
