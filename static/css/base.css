@@ -1,16 +1,26 @@
 html {
     height: 120vh;
+    scroll-behavior: smooth;
 }
 
 body {
-    color: #444;
+    color: #222;
+    margin: 0vw;
+	padding: 0vw;
     font-family: 'Open Sans';
     overflow-x: hidden;
+    background-color: #fafafa;
 }
 
+
+
 .main-logo-link {
-    color: #444!important;
+    color: #222!important;
     font-family: 'Roboto';
+}
+
+.nav-link {
+    color: #222!important;
 }
 
 .fa-user {
@@ -19,7 +29,7 @@ body {
 
 .fa-stack-2x {
    font-size: 1.5em!important;
-   color: black!important; 
+   color: #222!important; 
    top: 0vw;
 }
 
@@ -31,7 +41,7 @@ body {
 .form-control:focus {
   box-shadow: none!important;
   border-color: #D5D8DC;
-  background-color: white;
+  background-color: #fafafa;;
 }
 
 .nav-link {
@@ -154,17 +164,17 @@ body {
 
 .shop-now-button {
     background: black;
-    color: white;
+    color: #fafafa;;
     min-width: 260px;
 }
 
 .btn-black {
     background: black;
-    color: white;
+    color: #fafafa;;
 }
 
 .btn-outline-black {
-    background: white;
+    background: #fafafa;;
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
@@ -173,7 +183,7 @@ body {
 .btn-outline-black:active,
 .btn-outline-black:focus {
     background: black;
-    color: white !important;
+    color: #fafafa; !important;
 }
 
 .shop-now-button:hover,
@@ -183,7 +193,7 @@ body {
 .btn-black:active,
 .btn-black:focus {
     background: #222;
-    color: white;
+    color: #fafafa;;
 }
 
 .text-black {
@@ -204,7 +214,7 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: #fafafa;;
 	z-index: -1;
 }
 
@@ -213,7 +223,7 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
-/* .hr-white {
+/* .hr-#fafafa; {
     border-top: 0px solid;
 } */
 
@@ -227,7 +237,7 @@ a.category-badge > span.badge:hover {
 
 .artists-bio-text {
     height: 70vw;
-    white-space: pre-wrap;
+    #fafafa;-space: pre-wrap;
 }
 
 .artists-picture-image {
