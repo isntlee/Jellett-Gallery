@@ -28,9 +28,6 @@ class Order(models.Model):
     order_total = models.DecimalField(
                                       max_digits=10, decimal_places=2,
                                       null=False, default=0)
-    non_delivery = models.DecimalField(
-                                      max_digits=10, decimal_places=2,
-                                      null=False, default=0)
     grand_total = models.DecimalField(
                                       max_digits=10, decimal_places=2,
                                       null=False, default=0)
@@ -44,6 +41,7 @@ class Order(models.Model):
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
+
 
     def update_total(self):
         """
@@ -59,14 +57,6 @@ class Order(models.Model):
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
-        # self.non_delivery = self.grand_total - self.delivery_cost
-        # self.save()
-
-        # self.non_delivery = self.non_delivery
-        # self.save()
-
-        self.grand_total = self.order_total
-        self.save()
 
     def save(self, *args, **kwargs):
         """
@@ -89,7 +79,7 @@ class OrderLineItem(models.Model):
     product = models.ForeignKey(Product, null=False,
                                 blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False,
-                                   blank=False, default=0)
+                                   blank=False, default=1)
     lineitem_total = models.DecimalField(
                                         max_digits=6, decimal_places=2,
                                         null=False, blank=False,

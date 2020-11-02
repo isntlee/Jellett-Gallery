@@ -94,22 +94,13 @@ def checkout(request):
             return redirect(reverse('artists'))
 
         current_bag = bag_contents(request)
-        if request.user.is_authenticated:
-            total = current_bag['total']
-            stripe_total = round(total * 100)
-            stripe.api_key = stripe_secret_key
-            intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,
-                )
-        else:
-            delivery_total = current_bag['delivery_total']
-            stripe_total = round(delivery_total * 100)
-            stripe.api_key = stripe_secret_key
-            intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,
-                )
+        total = current_bag['grand_total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+            )
 
         # Attempt to prefill the form with any"
         # "info the user maintains in their profile

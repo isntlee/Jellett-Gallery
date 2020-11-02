@@ -184,7 +184,7 @@
                                 <p class="my-0 mb-0 text-black font-weight-bold">Grand Total:</p>
                             </div>
                             <div class="col-12 col-md-8 text-md-right">
-                            <p class="my-0">EUR{{ order.non_delivery | floatformat:2 }}</p>
+                            <p class="my-0">EUR{{ order.order_total | floatformat:2 }}</p>
                         {% else %}
                             <div class="col-12 col-md-4">
                                 <p class="my-0 mb-0 text-black font-weight-bold">Grand Total:</p>

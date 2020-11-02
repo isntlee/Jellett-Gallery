@@ -74,7 +74,7 @@
                     {% if user.is_authenticated %}
                         <p class="my-0">EUR{{ total | floatformat:2 }}</p>
                     {% else %}
-                        <p class="my-0"><strong>EUR{{ delivery_total | floatformat:2 }}</strong></p>	
+                        <p class="my-0"><strong>EUR{{ total | floatformat:2 }}</strong></p>	
                     {% endif %}
                     </div>
                 </div>
