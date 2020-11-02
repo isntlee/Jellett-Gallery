@@ -19,17 +19,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 mt-4 mb-5">
-                {% for order in orders %}
-                    {% if forloop.first %}
-                        <p class="text-muted mb-4">Account Details</p>
-                        <p><strong>{{ order.full_name}}</strong></p>
-                        <p>{{ order.user_profile}}</p>
-                        <p>{{ order.email}}</p>
-                        <!-- {{forloop.length}} -->
-                    {% endif %}
-                {% endfor %}             
-            </div>
+            
             <div class="col-12 col-lg-6 mt-4 mb-5">
                 <p class="text-muted">Successful Bids</p>
                                 <div class="order-history table-responsive">

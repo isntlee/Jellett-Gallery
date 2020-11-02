@@ -28,6 +28,9 @@ class Order(models.Model):
     order_total = models.DecimalField(
                                       max_digits=10, decimal_places=2,
                                       null=False, default=0)
+    non_delivery = models.DecimalField(
+                                      max_digits=10, decimal_places=2,
+                                      null=False, default=0)
     grand_total = models.DecimalField(
                                       max_digits=10, decimal_places=2,
                                       null=False, default=0)
@@ -56,8 +59,14 @@ class Order(models.Model):
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
-        # self.grand_total = self.order_total
+        # self.non_delivery = self.grand_total - self.delivery_cost
         # self.save()
+
+        # self.non_delivery = self.non_delivery
+        # self.save()
+
+        self.grand_total = self.order_total
+        self.save()
 
     def save(self, *args, **kwargs):
         """

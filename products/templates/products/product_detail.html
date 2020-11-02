@@ -44,7 +44,8 @@
                     {% if request.user.is_superuser %}
                         <small class="mt-5">
                             <a class="text-primary" href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            <a class="text-danger" onclick="sweetAlert_delete();">Delete</a>
+                            <form action="{% url 'delete_product' product.id %}" method="POST" id="deleteForm"></form>
                         </small>
                     {% endif %}
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -88,6 +89,30 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+    {{ block.super }}
+    <script type="text/javascript">
+    function sweetAlert_delete() {
+        swal({
+                title: "Sure about this?",
+                text: "This can't be recovered afterwards",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                timer: 5000,
+                })
+        .then((willDelete) => {
+            if (willDelete) {
+                document.getElementById("deleteForm").submit();
+                swal("And just like that, it was gone", {
+                icon: "success",
+                });
+            } else {
+                swal("The work is preserved still");
+            }
+        })
+    }
+    </script>
+
 {% endblock %}
+
+// {% include 'products/includes/quantity_input_script.html' %}
