@@ -7,6 +7,14 @@ from .forms import UserProfileForm
 from checkout.models import Order
 
 
+# def whoops(request):
+#     username = None
+#     if request.user.is_authenticated:
+#         username = request.user.username
+#         user_profile = request.user.user_profile
+#         full_name = request.user.full_name
+
+
 @login_required
 def profile(request):
     """ Display the user's profile. """
@@ -30,6 +38,9 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
+        # 'username': username,
+        # 'full_name': full_name,
+        # 'user_profile': user_profile,
         'on_profile_page': True
     }
 

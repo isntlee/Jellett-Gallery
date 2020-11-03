@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    color: #222;
+    color: #111;
     margin: 0vw;
 	padding: 0vw;
     font-family: 'Open Sans';
@@ -12,15 +12,40 @@ body {
     background-color: #fafafa;
 }
 
+#topnav  {
+    background-color: #fafafa;
+}
 
+#navbar-sm  {
+    background-color: #fafafa;
+}
 
 .main-logo-link {
-    color: #222!important;
+    color: #080808!important;
     font-family: 'Roboto';
 }
 
 .nav-link {
-    color: #222!important;
+    color: #040404;
+    padding: .5rem .35rem;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+    color: #33adff;
+}
+
+.fa-stack-2x:hover,
+.fa-stack-2x:active,
+.fa-stack-2x:focus {
+    color: #33adff;
+}
+
+.fa-search:hover,
+.fa-search-2x:active,
+.fa-search:focus {
+    color: #33adff;
 }
 
 .fa-user {
@@ -29,7 +54,7 @@ body {
 
 .fa-stack-2x {
    font-size: 1.5em!important;
-   color: #222!important; 
+   color: #202020; 
    top: 0vw;
 }
 
@@ -38,15 +63,16 @@ body {
     top: 0.7vw;
 }
 
+.fa-search {
+    color: #202020;
+}
+
 .form-control:focus {
   box-shadow: none!important;
   border-color: #D5D8DC;
   background-color: #fafafa;;
 }
 
-.nav-link {
-  padding: .5rem .35rem;
-}
 
 /* .exhibitions-images {
 } */
@@ -86,7 +112,7 @@ body {
    height: 20vh!important;
    bottom: -20vh!important;
    width:100%!important;
-   color: #222;
+   color: #111;
 } */
 
 .socials {
@@ -99,7 +125,8 @@ body {
 }
 
 .carousel-image {
-  height: 100%;
+  height: 100vh;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -183,7 +210,7 @@ body {
 .btn-outline-black:active,
 .btn-outline-black:focus {
     background: black;
-    color: #fafafa; !important;
+    color: #fafafa!important;
 }
 
 .shop-now-button:hover,
@@ -192,12 +219,12 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: #fafafa;;
+    background: #111;
+    color: #fafafa;
 }
 
 .text-black {
-    color: #000 !important;
+    color: #040404!important;
 }
 
 .border-black {
@@ -237,7 +264,7 @@ a.category-badge > span.badge:hover {
 
 .artists-bio-text {
     height: 70vw;
-    #fafafa;-space: pre-wrap;
+    white-space: pre-wrap;
 }
 
 .artists-picture-image {
@@ -247,6 +274,14 @@ a.category-badge > span.badge:hover {
 .artistList {
     line-height: 110%;
 }
+/* 
+.artistList-link
+
+a .artistList-link:hover,
+a .artistList-link:active,
+a .artistList-link:focus {
+    color: #33adff!important;
+} */
 
 a:link {
   color: #555;
@@ -257,7 +292,7 @@ a:visited {
 }
 
 a:hover {
-  color: #555;
+  color: #33adff;
   text-decoration: none;
 }
 
@@ -426,8 +461,8 @@ input[name='q']::placeholder {
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
 	color: #fff;
-    background-color: #222;
-    border-color: #222;
+    background-color: #111;
+    border-color: #111;
 }
 
 .allauth-form-inner-content a {
