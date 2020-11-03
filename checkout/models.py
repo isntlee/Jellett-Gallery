@@ -5,7 +5,7 @@ from django_countries.fields import CountryField
 from products.models import Product
 from django.conf import settings
 from profiles.models import UserProfile
-from django.shortcuts import get_object_or_404
+
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -41,7 +41,6 @@ class Order(models.Model):
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
-
 
     def update_total(self):
         """

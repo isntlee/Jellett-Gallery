@@ -21,7 +21,7 @@ body {
 }
 
 .main-logo-link {
-    color: #080808!important;
+    color: #040404!important;
     font-family: 'Roboto';
 }
 
@@ -54,7 +54,7 @@ body {
 
 .fa-stack-2x {
    font-size: 1.5em!important;
-   color: #202020; 
+   color: #040404; 
    top: 0vw;
 }
 
@@ -64,7 +64,7 @@ body {
 }
 
 .fa-search {
-    color: #202020;
+    color: #040404;
 }
 
 .form-control:focus {
@@ -74,13 +74,11 @@ body {
 }
 
 
-/* .exhibitions-images {
-} */
-
 .exhibition-title {
     font-size: max(2.5vw, 2px);
     padding-bottom: .3vw;
     padding-top: max(2.5vw, 2px);
+    color: #000;
 }
 
 .exhibition-detail {
@@ -104,7 +102,7 @@ body {
 }
 
 .exhibitions-details {
-    color: #111;
+    color: #040404;
 }
 
 /* .footer-bottom {
@@ -116,7 +114,7 @@ body {
 } */
 
 .socials {
-    color: #111!important
+    color: #040404!important
 }
 
 /* Styling for home page */
@@ -190,26 +188,26 @@ body {
 }
 
 .shop-now-button {
-    background: black;
+    background: #040404;
     color: #fafafa;;
     min-width: 260px;
 }
 
 .btn-black {
-    background: black;
+    background: #040404;
     color: #fafafa;;
 }
 
 .btn-outline-black {
     background: #fafafa;;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: #040404 !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
+    background: #040404;
     color: #fafafa!important;
 }
 
@@ -219,7 +217,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #111;
+    background: #040404;
     color: #fafafa;
 }
 
@@ -228,11 +226,11 @@ body {
 }
 
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid #040404 !important;
 }
 
 .bg-black {
-    background: #000 !important;
+    background: #040404 !important;
 }
 
 .overlay {
@@ -254,16 +252,16 @@ a.category-badge > span.badge:hover {
     border-top: 0px solid;
 } */
 
-.artists-bio {
+/* .artists-bio {
     height: 100vw;
-}
+} */
 
 .artists-picture {
-    height: 70vw;
+    height: 60vw;
 }
 
 .artists-bio-text {
-    height: 70vw;
+    height: 60vw;
     white-space: pre-wrap;
 }
 
@@ -273,6 +271,10 @@ a.category-badge > span.badge:hover {
 
 .artistList {
     line-height: 110%;
+}
+
+.a_little_space {
+    height: 10vh;
 }
 /* 
 .artistList-link
@@ -284,11 +286,11 @@ a .artistList-link:focus {
 } */
 
 a:link {
-  color: #555;
+  color: #040404;
 }
 
 a:visited {
-  color: #555;
+  color: #040404;
 }
 
 a:hover {
@@ -297,7 +299,7 @@ a:hover {
 }
 
 a:active {
-  color: #000;
+  color: #040404;
 }
 
 .card{
@@ -497,6 +499,18 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+@media (max-width: 1600px) {
+
+    .artists-picture {
+    height: 25vw;
+}
+
+    .artists-bio-text {
+    height: 30vw;
+}
+
+}
+
  @media (min-width: 1400px) {
 
 .exhibition-title {
@@ -518,6 +532,26 @@ input[name='q']::placeholder {
 .exhibition-paragraph {
     font-size: 1vw;
     padding-bottom: .3vw;
+}
+
+    .artists-picture {
+    height: 40vw;
+}
+
+    .artists-bio-text {
+    height: 40vw;
+}
+
+ }
+
+ @media (max-width: 1200px) {
+
+    .artists-picture {
+    height: 50vw;
+}
+
+    .artists-bio-text {
+    height: 50vw;
 }
 
  }
