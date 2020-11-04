@@ -30,12 +30,6 @@ def bag_contents(request):
 
             grand_total = delivery + total
 
-            print(bag)
-            print(product)
-            print(total)
-            print(delivery)
-            print(grand_total)
-
     context = {
         'bag_items': bag_items,
         'total': total,

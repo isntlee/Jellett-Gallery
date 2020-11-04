@@ -58,7 +58,12 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+
+            if request.user.is_authenticated:
+                order.is_registered = True
+
             order.save()
+
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -105,6 +110,7 @@ def checkout(request):
         # Attempt to prefill the form with any"
         # "info the user maintains in their profile
         if request.user.is_authenticated:
+
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
