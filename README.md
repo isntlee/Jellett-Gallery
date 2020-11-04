@@ -19,7 +19,7 @@ This site was created to fill a, testing to see if postgres, now works or not
         - [**Back-End**](#back-end)
     - [**Testing**](#testing)
         - [**Validators**](#validators)
-        - [**Automated Testing**](#automated-testing)
+        - [**Automated Testing**](#automated-testing
         - [**Compatibility**](#compatibility)
         - [**User Testing**](#user-testing)
     - [**Deployment**](#deployment)
@@ -292,25 +292,73 @@ Manual tests were carried out and the testing process was as follows:
 
 ### Local Deployment
 
+Do ensure that you have an IDE such as 
+- [Gitpod](https://www.gitpod.io/).
+
 Please note - in order to run this project locally on your own system, you will need the following installed:
 - [Python3](https://www.python.org/) to run the application.
 - [PIP](https://pip.pypa.io/en/stable/) to install app requirements.
-- [Gitpod](https://www.gitpod.io/) as IDE.
 - [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for version control.
-- [MongoDB](https://www.mongodb.com) to develop your own database.
 
-1. Database created in an Atlas MongoDB account
-2. Project workspace was created in GitPod. In this workspace: Flask was installed - `pip3 install flask`.
-3. Setup app.py file and imported flask and os - `from flask import Flask. import os`
-4. Created an instance of flask - `app = flask(__name__)`
-5. Inside the app run() function set the host, ip and debug=true
-6. Create a `.env` file with your credentials. 
-7. Create a git repository in GitPod. CLI: git init. `CLI: git add . CLI: git commit -m "Initial Commit"`
-8. Get Flask to talk to MongoDB - `CLI: pip3 install flask-pymongo` `CLI: pip3 install dnspython`
-9. Add extra libraries to app.py - `from flask_pymongo import Pymongo` `from bson.objectid import ObjectID`
-10. Add DB connection code to app.py
-11. Test connection to DB again to confirm it's working
-12. Set Debug to False
+To access full functionality on the site locally, you will need to create accounts with the following services:
+    - [Stripe](https://dashboard.stripe.com/register)
+    - [AWS](https://aws.amazon.com/) and [set up an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
+
+
+### How to 
+1. Clone the Horizon repository by either downloading from here or type the following command into your terminal:
+    ```
+    git clone https://github.com/isntlee/Jellett_Gallery
+    ```
+
+2. Navigate to this folder in your terminal.
+
+3. A virtual environment is recommended for the Python interpreter. Enter the command:
+    ```
+    python3 -m .venv venv
+    ```  
+_Warning : **This Python command may differ** depending on operating system, the command required could be `python` or `py`_
+
+4. Initialize the environment by using the following command: 
+    ```
+    .venv\bin\activate 
+    ```
+_Warning this command may differ depending on your operating system. 
+
+
+5. Install all the requirements and dependancies with the command 
+    ```
+    pip3 -r requirements.txt.
+    ```
+
+6. Within your IDE create a file where you can store your sensitive information for the app, I would advise an env.py file.
+    ```
+    import os
+    os.environ.setdefault("STRIPE_PUBLISHABLE", "your_stripe_publishable_key")
+    os.environ.setdefault("STRIPE_SECRET", "your_stripe_secret_key")
+    os.environ.setdefault("SECRET_KEY", "your_django_secret_key")
+    ```
+
+
+7. If you have restarted your machine to activate your environment variables, do not forget to reactivate your virtual environment with the command used at step 4.
+
+8. Migrate the admin panel models to create your database template with the terminal command
+    ```
+    python3 manage.py migrate
+    ```
+
+9. Create your superuser to access the django admin panel and database with the following command, and then follow the steps to add your admin username and password:
+    ```
+    python3 manage.py createsuperuser
+    ```
+
+10. You can now run the program locally with the following command: 
+    ```
+    python3 manage.py runserver
+    ```
+
+11. Once the program is running, go to the local link provided and add `/admin` to the end of the url. Here log in with your superuser account.
+
 
 
 ### Remote Deployment
