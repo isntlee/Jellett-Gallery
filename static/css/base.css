@@ -341,12 +341,10 @@ input[name='q']::placeholder {
 
 /* ------------------------------- bootstrap toasts */
 
-.message-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -450px;
-    margin-left: -200px;
+ .message-container {
+    position: fixed ;
+    top: 0vh;
+    left: 32vw;
     z-index: 99999999999;
 }
 
@@ -355,7 +353,11 @@ input[name='q']::placeholder {
 }
 
 .toast-capper {
-    height: 2px;
+    height: 0px;
+}
+
+.close:after {
+    color: transparent;
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
@@ -369,8 +371,7 @@ input[name='q']::placeholder {
     top: -10px;
     right: 36px;
 }
-
-/* Convenience classes - colors copied from Bootstrap */
+/* 
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -401,7 +402,7 @@ input[name='q']::placeholder {
 
 .arrow-dark {
     border-bottom-color: #343a40 !important;
-}
+} */
 
 .bag-notification-wrapper {
     height: 100px;

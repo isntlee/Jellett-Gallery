@@ -46,7 +46,7 @@
                             <form action="{% url 'delete_product' product.id %}" method="POST" id="deleteForm">
                             {% csrf_token %}
                             </form>
-                            <button class="text-primary btn p-0" type="submit" href="{% url 'edit_product' product.id %}">Edit</button> 
+                            <a class="text-primary btn p-0" href="{% url 'edit_product' product.id %}">Edit</a> 
                             <button class="text-danger btn p-0" onclick="sweetAlert_delete();">Delete</button> 
                         </small>
                     {% endif %}

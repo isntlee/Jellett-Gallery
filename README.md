@@ -159,7 +159,7 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 
 - [Gitpod](https://www.gitpod.io/) - Used as my IDE for coding.
 - [GitHub](https://github.com/) - Used as remote storage of my code.
-- [Stripe](https://stripe.com) as payment platform to validate and accept credit card payments securely.
+- [Stripe](https://stripe.com) - As payment platform to validate and accept credit card payments securely.
 - [GIMP](https://www.gimp.org/) - Used for editing images.
 - [TinyPNG](https://tinypng.com/) - Used to compress images for faster loading.
 
@@ -257,6 +257,9 @@ Manual tests were carried out and the testing process was as follows:
 - If user enters an incorrect set of details, the error message will fire. 
 - If user enters the correct login details they are returned to the homepage. 
 
+###### Logout
+- Verified that the user is returned to home and logged out.
+
 ###### My Account Page (Profile)
 - Verified that the user details are present. 
 - If bids/orders have been made then order details visible. 
@@ -299,9 +302,6 @@ Manual tests were carried out and the testing process was as follows:
 - Enter a term into the search form and confirm that the correct results are returned. 
 - Verified that sort-by function operates correctly. 
 
-###### Logout
-- Verified that the user is returned to home and logged out.
-
 ###### Committee Member Access (SuperUser)
 - Verified that the option "Collections" is now availiable, and that this link leads to the Collections Management Page. 
 - On the Collection Management Page, verifed that all nine form fields are availiable and that the image select function operates. 
@@ -309,7 +309,9 @@ Manual tests were carried out and the testing process was as follows:
 - On the Artwork Detail page, that the options edit and delete are visible/functional.
 - Confirmed that on selecting edit, superuser led to edit page which has all nine active form fields and that the image select function operates.
 - Confirmed that edited pieces/items are added to the relevant collection and are searchable. 
-- Confirmed that on selecting delete, superuser led to edit page which has all nine active form fields and that the image select function operates.
+- Confirmed that on selecting delete, an alert is fired requiring another click to proceed. 
+
+
 
 
 ###### Edit Sagas
@@ -365,7 +367,7 @@ To access full functionality on the site locally, you will need to create accoun
 
 
 ### How to 
-1. Clone the Horizon repository by either downloading from here or type the following command into your terminal:
+1. Clone the Jellett Gallery repository by either downloading from here or type the following command into your terminal:
     ```
     git clone https://github.com/isntlee/Jellett_Gallery
     ```

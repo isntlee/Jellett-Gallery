@@ -78,18 +78,18 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only committee members can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added piece')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request,
-                           "Failed to add product."
+                           "Failed to add piece."
                            "Please ensure the form is valid.")
     else:
         form = ProductForm()
@@ -114,7 +114,7 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated product!')
+            messages.success(request, 'Successfully updated piece')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request,
@@ -122,7 +122,7 @@ def edit_product(request, product_id):
                            "Please ensure the form is valid.")
     else:
         form = ProductForm(instance=product)
-        messages.info(request, f'You are editing {product.name}')
+        messages.info(request, f'You are editing "{product.name}"')
 
     template = 'products/edit_product.html'
     context = {
@@ -142,5 +142,5 @@ def delete_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, 'Product deleted!')
+    messages.success(request, 'Piece deleted')
     return redirect(reverse('artists'))
