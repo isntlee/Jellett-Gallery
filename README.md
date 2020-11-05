@@ -4,6 +4,7 @@
 
 This site was created to fill a, testing to see if postgres, now works or not
 
+[![Build Status](https://travis-ci.com/isntlee/Jellett_Gallery.svg?branch=masterr)](https://travis-ci.com/github/isntlee/Jellett_Gallery)
 ---
 
 - [**Table of Contents:**](#table-of-contents)
@@ -58,31 +59,29 @@ This site was created to fill a, testing to see if postgres, now works or not
 
 #### Framework
 
-- [Materialize 1.0.0](https://materializecss.com/)
-    - Materialize is a framework, created and designed by Google, that emphasizes a modern and clean layout. 
-- [jQuery 3.5.0](https://jquery.com/y/)
+- [Bootstrap 4.5.2](https://getbootstrap.com/)
+    - Bootstrap is a framework for building front-end projects, created and designed by Twitter.
+- [jQuery 3.5.1](https://jquery.com/y/)
     - jQuery, the classic choice, I decided to make this a crucial part of my scripts framework.
-- [Flask 1.1.2](https://flask.palletsprojects.com/en/1.1.x/)
-    - Flask is a lightweight WSGI web application framework used to render the back-end with the front.
 
 #### Aesthetic
 
-The core ambition of the site is to make the material/sagas as interesting as possible. The aesthetic was chosen to make the text/pictures of the entries take centre stage. This is achieved by bold uncluttered text, and a warm contrast of two key colours.
+The central ambition of the gallery is to promote the art. The aesthetic was chosen to make sure the images take centre stage. This is achieved by bold uncluttered text, and a central monochrome contrast. In an effort to instill a professional impression, the decision was made to limit the palette to the gallery conventions. 
 
-- (#FAFAFA) (**off-white** - *central color*)
-- (#FF9F00)(**off-orange, slightly** - *contrast color*)
+- (#FAFAFA)(**off-white** - *central color*)
+- (#020202)(**off-black** - *contrast color*)
+- (#555555)(**light-grey** - *link colour*)
+- (#33ADFF)(**light-blue** - *hover effect*)
 
 #### Icons
 
-- [Materialize Icons](https://materializecss.com/icons.html)
-    - These are the standard icons that come with Materialize 1.0.0, completely fit for purpose. 
-- [Line Awesome 1.3.0](https://icons8.com/line-awesome)
-    - An additional series of icons were required, this is a font awesome clone and more than sufficient. 
+- [Font Awesome](https://fontawesome.com/icons?d=gallery)
+    - This is the leading icon set and toolkit, it is completely fit for purpose. 
 
 #### Alerts
 
  - [Sweet Alerts](https://sweetalert.js.org/docs/)
-    - Instead of using the standard alerts-system, I decided to apply this visually improved option. 
+    - I decided to apply this visually improved option for critical decisions such as deleting an artwork within collections management. 
 
 ### Wireframes
 
@@ -92,13 +91,14 @@ The core ambition of the site is to make the material/sagas as interesting as po
 
 ## Features
 
-### Current Features
+### Artists
 
-#### Navbar
+- The Artists link directs to the Artists page; here offering a list of the commitee/gallery members. The list is made of links that lead to the artist's collection.
+    - There is a art display space on this page, which displays the artist's key piece when hovering over their name/link. 
+    - The links open to the artist's personal page, containing biographical details and a list of pieces on sale/display at the gallery. 
+    - These pieces can be bidded/purchased by first clicking on the title or image, that will lead the user to the artwork's detail page. Here the user is informed of the minimum offer/bid amount, and further details about the piece. There is an "Add to Bid" button to allow purchase, this leads the piece being added to the cart/bag facility. Finally, committe members/superusers can edit or delete these piecesas there are buttons availiable on superuser status. 
 
-##### Artists
-
-##### Accounts
+### Accounts
 
 **Register** 
 - Found within the Accounts tab/icon:  Anyone can open/register a personal account. A username/password and email address is required. Email verification is in place and passwords are hashed to enhance security. 
@@ -110,37 +110,25 @@ The core ambition of the site is to make the material/sagas as interesting as po
 - Accounts tab/icon: This feature is open all registered users. It presents key user information, bidding/order history and an editable address form 
 
 **Collections Management** 
-- Accounts tab/icon: This feature is limited to commitee members/superusers. It allows these users to add pieces to the collection.  There are several required conditions to meet to add an entry such as name, description, offer/price, etc, etc. 
+- Accounts tab/icon: This feature is limited to commitee members/superusers. It allows these users to add pieces to the collection.  There are several required conditions to meet to add an entry such as name, description, offer/price, etc, etc.  
 
-**Search** 
-- Easily accessible search function, searches through the full collection based on title or description word-choice. 
+### Bag/Cart
 
-**Add Entry** 
-- Create or add a new entry/saga. There are several required conditions to meet to add an entry such as title, tagline, image, etc, etc. 
+- This icon leads to the bag/cart facility but referred to on the site as "Bid Details".
+    - This is an opportunity to review the user's selection and remove any pieces from the bag/cart before bidding/purchase.
+    - The icon displays on the navbar the number of items that are in the bag/cart.  
+    - On selecting "Make Bid" the user is taken to the checkout facilty where purchase can be made. The page consists of a personal and billing details form, a summary of the bag/cart contents and payment form. Payment is currently made through the Stripe Online Payment Platform.
+    - Unregisterd users are charged full delivery on their orders, while registered users are not charged at all. This feature is not mentioned on the site for several reasons; firstly, any attempt to offer "money off" might tarnish the gallery's reputation/brand and it was felt at commitee level that registering members/users should be encouraged but not blatantly.  
+    - Successful payment leads to a confirmation page, that outlines the order's details in full and indicates that an email will be sent to the user's email address.
 
-**View Entry**
-- Read saga/entries in full, from the *Show Sagas* page, *My Sagas* page or from the map marker's "Full page reader" option. There are further options on the view page: 
-    - Like/dislike the entry, it's only on this view page that both buttons are active if the user is logged-in. 
-    - Find on map, this button returns the user to the map. 
-    - Social media buttons, availible for the user to share this entry on a range of platforms.     
+### Exhibitions/About Used
 
-**Update Entry** 
-- Update or edit your saga/entry, as the option is only availiable with user's own entries.  
+- These links lead to informative pages that are not interactive. They do have external informative links but that's the limit of their function. 
 
-**Delete Entry** 
-- Delete your saga/entry, as the option is only availiable with user's own entries. 
+### Search
 
-**Map**
-- This is another means of displaying entries, the user is encouraged to provide co-ordinates with their entry as then the entry/saga will be discoverable on the map. However, only the twenty most liked entries/sagas are discoverable on the map as loading periods are a concern.
-
-**Map Reader**
-- On the map, if the user selects a marker the full entry is there availible to read within a mini-reader. The user is informed of the entry length and the option of the full-page reader. 
-
-**Pagination**
-- Navigation method that organizes the entries into pages, the number of pages depends on the amount of entries displayed per page.
-
-**Sort-By**
-- Navigation method that organizes entries by set criteria whether the date added or the number of likes/dislikes added by various users. 
+- Easily accessible search function, searches through the full collection based on title or description word-choice.
+    - Sort-by function is present that organizes entries by set criteria whether the artist's name or the artwork's title.  
 
 **Error Pages**
 - There are two custom error pages for both 404 and 500 errors.
@@ -170,6 +158,7 @@ The core ambition of the site is to make the material/sagas as interesting as po
 
 - [Gitpod](https://www.gitpod.io/) - Used as my IDE for coding.
 - [GitHub](https://github.com/) - Used as remote storage of my code.
+- [Stripe](https://stripe.com) as payment platform to validate and accept credit card payments securely.
 - [GIMP](https://www.gimp.org/) - Used for editing images.
 - [TinyPNG](https://tinypng.com/) - Used to compress images for faster loading.
 
@@ -179,21 +168,24 @@ The core ambition of the site is to make the material/sagas as interesting as po
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) - Used as the base for cascading styles.
 - [Javascript](https://www.javascript.com/) - Used as primary JavaScript functionality.
 - [jQuery 3.5.0](https://code.jquery.com/jquery/) - Used as secondary JavaScript functionality.
-- [GoogleMaps API](https://developers.google.com/maps) - Used as the interactive map.
-- [Materialize 1.0.0](https://materializecss.com/) - Used as the overall design framework.
+- [Bootstrap 4.5.2](https://getbootstrap.com/) - Used as the overall design framework.
 
 ### Back-End
 
-- **Flask**
-    - [Flask 1.1.2](http://flask.pocoo.org/) - Used as the microframework.
-    - [Jinja 2.11](http://jinja.pocoo.org/docs/2.10/) - Used for templating with Flask.
-    - [Bcrypt 3.1.7](https://www.npmjs.com/package/bcrypt) - Bcrypt is a password-hashing function.
+- **Django**
+    - [Django 3.1.1](https://www.djangoproject.com/) as python web framework for rapid development.
+    - [Django Storages](https://django-storages.readthedocs.io/en/latest/) a collection of custom storage backends with django to work with boto3 and AWS S3.
+    - [Gunicorn](https://pypi.org/project/gunicorn/) WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
 - **Heroku**
     - [Heroku](https://www.heroku.com) - Used for the app hosting.
 - **Python**    
     - [Python 3.8.5](https://www.python.org/) - Used as for back-end programming.
-    - [MongoDB Atlas](https://www.mongodb.com/) - Used to store my database onilne.
-    - [PyMongo 3.10.1](https://api.mongodb.com/python/current/) - Used as the Python API for MongoDB.
+    - [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
+    - [Pillow](https://pillow.readthedocs.io/en/stable/) as python imaging library to aid in processing image files to store in database.
+- **Databases**
+    - [PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
+    - [SQlite3](https://www.sqlite.org/index.html) for development database, provided by django.
+
 
 --
 
@@ -202,10 +194,10 @@ The core ambition of the site is to make the material/sagas as interesting as po
 ### Validators
 
 **HTML**
-- [W3C HTML Validator](https://validator.w3.org) - The Jinja template solely throw errors `{{ variables }}`, `{% for %} {% endfor %}`, etc. Besides this fact, the code is valid. However, in one file "base.html" errors are thrown over the use of <br>, these have been retained due to time constraints. 
+- [W3C HTML Validator](https://validator.w3.org) - The code is valid. 
 
 **CSS**
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - The code is completely valid, the only warnings concern imported CSS items: the social media buttons, and infowindow details. 
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - The code is valid. The only warnings concern imported items: AWS functions, and Bootstrap details. 
 
 **JavaScript**
 - [JShint](https://jshint.com/)
@@ -222,15 +214,15 @@ The core ambition of the site is to make the material/sagas as interesting as po
 
 ### Automated Testing
 
-- Tests were developed with the Unit testing framework, these tests were applied to the application's routes/forms. See [test.py](https://github.com/isntlee/sagacity/blob/master/test.py) for the full suite of tests. Unit-tests are run from CLI with the command: "python3 test.py"
+- Tests were developed with the Unit testing framework, these tests were applied to the application's routes/forms; see the separate app tests folders. Unit-tests are run from CLI with the command: "python3 manage.py test"
 - There are two varieties of tests: route/form tests watching clear behaviour and tests verifying actions. 
     - Behavior: testing routes/forms, asserting that all cases behave correctly and returning a request succeed status 200. 
-    - Verify actions: the tests created concern writing/deleting from the database; users, sagas, etc, etc. 
+    - Verify actions: the tests created concern writing/deleting from the database. 
 
 ### Compatibility
 
 **Mobile**
-- Chrome Developer Tools, Android(Samsung A5/Galaxy S8) and Apple(Iphone 8) mobile phones used to test appearance of site and its various features. There are very minor differences between android/ios but all are cosmetic e.g. fonts displaying slightly differently, pages scrolling more fluidly or the map being more immediately responsive on ios. 
+- Chrome Developer Tools, Android(Samsung A5/Galaxy S8) and Apple(Iphone 8) mobile phones used to test appearance of site and its various features. There are very minor differences between android/ios but all are cosmetic e.g. fonts displaying slightly differently, pages scrolling more fluidly or details being more immediately responsive on ios. 
 
 **Desktop**
 - Google Chrome, Microsoft Edge, Mozilla Firefox all work and display correctly, testing done on a local system. Testing of Safari has only been conducted on [BrowserStack](https://www.browserstack.com/), the site works correctly. 
