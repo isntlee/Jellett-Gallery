@@ -19,7 +19,7 @@ This site was created to fill a, testing to see if postgres, now works or not
         - [**Back-End**](#back-end)
     - [**Testing**](#testing)
         - [**Validators**](#validators)
-        - [**Automated Testing**](#automated-testing
+        - [**Automated Testing**](#automated-testing)
         - [**Compatibility**](#compatibility)
         - [**User Testing**](#user-testing)
     - [**Deployment**](#deployment)

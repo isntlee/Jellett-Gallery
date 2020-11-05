@@ -121,20 +121,17 @@ WSGI_APPLICATION = 'jellett-gallery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# if 'DATABASE_URL' in os.environ:
-#     DATABASES = {
-#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
 
-DATABASES = {
-        'default': dj_database_url.parse("postgres://nxihmhatkyappj:02611752e574f4c19d3eea40fdd3c1590b744a4e23772434c7caca35dfcce9d1@ec2-54-246-87-132.eu-west-1.compute.amazonaws.com:5432/detlhbt62c82aj")
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
 
 
