@@ -94,17 +94,26 @@ The core ambition of the site is to make the material/sagas as interesting as po
 
 ### Current Features
 
+#### Navbar
+
+##### Artists
+
+##### Accounts
+
 **Register** 
-- Anyone can open/register a personal account. A username/password is required, passwords are hashed to enhance security. 
+- Found within the Accounts tab/icon:  Anyone can open/register a personal account. A username/password and email address is required. Email verification is in place and passwords are hashed to enhance security. 
 
 **Login/Logout**
-- For users with accounts, the sign-in procedure checks that the username/password matches the database record.  
+- Accounts tab/icon: For users with accounts, the sign-in procedure checks that the username/password matches the database record.  
 
-**View Entries** 
-- This is the *Show Sagas* page or the *My Sagas* page, all entries are listed by date added, this criteria changed by selecting sort-by options.   
+**My Account** 
+- Accounts tab/icon: This feature is open all registered users. It presents key user information, bidding/order history and an editable address form 
+
+**Collections Management** 
+- Accounts tab/icon: This feature is limited to commitee members/superusers. It allows these users to add pieces to the collection.  There are several required conditions to meet to add an entry such as name, description, offer/price, etc, etc. 
 
 **Search** 
-- Easily accessible search function, searches through the full collection based on title word-choice. 
+- Easily accessible search function, searches through the full collection based on title or description word-choice. 
 
 **Add Entry** 
 - Create or add a new entry/saga. There are several required conditions to meet to add an entry such as title, tagline, image, etc, etc. 
@@ -140,17 +149,20 @@ The core ambition of the site is to make the material/sagas as interesting as po
 
 ### Potential Improvements 
 
-**Image Storage** 
-- Rather than the user inputting a URL, it would be more user-friendly to allow the user to upload an image file from their device. 
-
 **Account Personalisation** 
 - To build-in a series of additional options for the user after registering such as saving favourites, hiding personal entries that are still work-in-progress, undo entry deletes and an option to re-set passwords if lost. 
 
 **Geo-location** 
-- This would be an additional map feature, that would track the user's location and update the map-centre as the page refreshed. Potential cost concerns with the API have delayed its incorporation.
+- This would be a google map feature, that would indicate the location of important artistic centres in Ireland, especially Dublin. The user's personal location would update the map-centre as the page refreshed allowing real-time interaction. 
 
-**Like/dislike buttons**
-- The current format only restricts the user to voting once per refresh, with this vote altering the 'likes' DB record. With additional time, there would have been a framework in place to track whether a user had voted for an entry or not, limiting that user to only ever adding one upvote or one downvote. 
+**Gallery app.**
+- A gallery function within 'My Account' of the images of previous bid/orders.
+
+**Rating system**
+- With additional time, there would have been built a system to track whether a registered user had liked/voted for a piece or not, limiting that user to only ever adding one upvote or one downvote.
+
+**Ranking system**
+- This would exist on top of the Rating system allowing pieces to be displayed in artist's pags, and through search results, in terms of likes/votes. 
 
 --
 
