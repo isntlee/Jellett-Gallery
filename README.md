@@ -4,7 +4,7 @@
 
 This site was created to fill a, testing to see if postgres, now works or not
 
-[![Build Status](https://travis-ci.com/isntlee/Jellett_Gallery.svg?branch=masterr)](https://travis-ci.com/github/isntlee/Jellett_Gallery)
+[![Build Status](https://travis-ci.com/isntlee/Jellett_Gallery.svg?branch=master)](https://travis-ci.com/github/isntlee/Jellett_Gallery)
 ---
 
 - [**Table of Contents:**](#table-of-contents)
@@ -96,7 +96,8 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 - The Artists link directs to the Artists page; here offering a list of the commitee/gallery members. The list is made of links that lead to the artist's collection.
     - There is a art display space on this page, which displays the artist's key piece when hovering over their name/link. 
     - The links open to the artist's personal page, containing biographical details and a list of pieces on sale/display at the gallery. 
-    - These pieces can be bidded/purchased by first clicking on the title or image, that will lead the user to the artwork's detail page. Here the user is informed of the minimum offer/bid amount, and further details about the piece. There is an "Add to Bid" button to allow purchase, this leads the piece being added to the cart/bag facility. Finally, committe members/superusers can edit or delete these piecesas there are buttons availiable on superuser status. 
+    - These pieces can be bidded/purchased by first clicking on the title or image, that will lead the user to the artwork's detail page. Here the user is informed of the minimum offer/bid amount, and further details about the piece.
+    - On the artwork detail page there is an "Add to Bid" button to allow purchase, this leads the piece being added to the cart/bag facility. Finally, committe members/superusers can edit or delete these piecesas there are buttons availiable on superuser status. 
 
 ### Accounts
 
@@ -135,7 +136,7 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 
 
 
-### Potential Improvements 
+## Potential Improvements 
 
 **Account Personalisation** 
 - To build-in a series of additional options for the user after registering such as saving favourites, hiding personal entries that are still work-in-progress, undo entry deletes and an option to re-set passwords if lost. 
@@ -173,18 +174,18 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 ### Back-End
 
 - **Django**
-    - [Django 3.1.1](https://www.djangoproject.com/) as python web framework for rapid development.
-    - [Django Storages](https://django-storages.readthedocs.io/en/latest/) a collection of custom storage backends with django to work with boto3 and AWS S3.
-    - [Gunicorn](https://pypi.org/project/gunicorn/) WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
+    - [Django 3.1.1](https://www.djangoproject.com/) - As python web framework for rapid development.
+    - [Django Storages](https://django-storages.readthedocs.io/en/latest/) - A collection of custom storage backends with Django to work with boto3 and AWS S3.
+    - [Gunicorn](https://pypi.org/project/gunicorn/) - WSGI HTTP Server for UNIX to aid in deployment of the Django project to Heroku.
 - **Heroku**
     - [Heroku](https://www.heroku.com) - Used for the app hosting.
 - **Python**    
     - [Python 3.8.5](https://www.python.org/) - Used as for back-end programming.
-    - [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
-    - [Pillow](https://pillow.readthedocs.io/en/stable/) as python imaging library to aid in processing image files to store in database.
+    - [Psycopg2](https://pypi.org/project/psycopg2/) - As PostgreSQL database adapter for Python.
+    - [Pillow](https://pillow.readthedocs.io/en/stable/) - As python imaging library to aid in processing image files to store in database.
 - **Databases**
-    - [PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
-    - [SQlite3](https://www.sqlite.org/index.html) for development database, provided by django.
+    - [PostgreSQL](https://www.postgresql.org/) - For production database, provided by Heroku.
+    - [SQlite3](https://www.sqlite.org/index.html) - For development database, provided by Django.
 
 
 --
@@ -233,24 +234,47 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 Manual tests were carried out and the testing process was as follows:
 
 **Landing Page**
- - Click "sagacity" and verify that home page appears.
- - Click on Sagas button  - verify redirect to view entries/sagas page.
- - If user is not logged in “Login” should be displayed in the navigation bar and clicking this link will bring you to the login page.
- - Search Button - click to open search bar.
- - Map Button - click and verify if redirected to map where twenty markers should load. 
+ - Click "Jellett Gallery" and verified that home page appears.
+ - Click on "Artists" button  - verified redirect to view "Artists" page.
+ - Click on "Exbibitions" button  - verified redirect to view "Exbibitions" page.
+ - Click on "About" button  - verified redirect to view "About" page.
+ - Click on "Bag" icon  - verified redirect to view "Bid Details" page. If items have been added to bid, a number displays on the "Bag" icon. 
+ - If user is logged-in; “My Account” is displayed in the dropdown menu after clicking the account icon and clicking this link brings you to the "My Account" page.
+ - If user is not logged-in; "Register" and “Login” isdisplayed in the dropdown menu after clicking the account icon and clicking either link will bring you to that page.
+ - Search Button - click to open search bar. 
 
 **User Account**
 
-###### Register Page
+###### Register/Sign-Up Page
 - Verify that clicking on the link brings user to the registration page. 
-- Both fields required for registration. 
-- Tested registering successfully and was returned to the homepage.
-- Verify that username must be unique - message appears if details are not unique.
+- All five fields required for registration are displayed. 
+- Verify that username and email must be unique - message appears if details are not unique.
+- Verify that password must be unique - message appears if password is too common, short or too similar to username.
+- Tested registering successfully by varifying email address and was returned to the homepage.
 
-###### Login Page
+###### Login/Sign-In Page
 - Verified that the login link directs to the login page
 - If user enters an incorrect set of details, the error message will fire. 
 - If user enters the correct login details they are returned to the homepage. 
+
+###### My Account Page
+- Verified that the user details are present. 
+- If bids/orders have been made then order details visible. 
+- If bids/orders have been made then billing details visible. 
+- Verifed that billing details presented in all seven form fields and that these details are editable. 
+
+###### Artists Page
+- Confirm that on hovering over Artist list/links that display box changes image, and link changes colour. 
+- Verified that by clicking all links, all lead to the Artist's personal collection page.
+
+###### Artists Collection Page
+- Verified that the artists's personal image and introduction is present 
+- Confirmed that all nine artworks are displayed and all links to artwork detail pages are active/functional.
+
+###### Artwork Detail Page
+- Verified that the artwork image and details are present. 
+- Confirmed that the "Keep Browsing" button is functional, and returns to artist's collection page. 
+- Confirmed that the "Add to Bid" button is functional, leads to number increasing on cart icon and message appears "Added ..... to your bid"
 
 ###### Add Sagas
 - User can only add an entry/saga if they are logged in.
