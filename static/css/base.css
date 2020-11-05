@@ -233,6 +233,11 @@ body {
     background: #040404 !important;
 }
 
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .overlay {
 	height: 100%;
 	width: 100%;

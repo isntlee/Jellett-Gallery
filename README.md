@@ -243,8 +243,6 @@ Manual tests were carried out and the testing process was as follows:
  - If user is not logged-in; "Register" and “Login” isdisplayed in the dropdown menu after clicking the account icon and clicking either link will bring you to that page.
  - Search Button - click to open search bar. 
 
-**User Account**
-
 ###### Register/Sign-Up Page
 - Verify that clicking on the link brings user to the registration page. 
 - All five fields required for registration are displayed. 
@@ -310,40 +308,6 @@ Manual tests were carried out and the testing process was as follows:
 - Confirmed that on selecting edit, superuser led to edit page which has all nine active form fields and that the image select function operates.
 - Confirmed that edited pieces/items are added to the relevant collection and are searchable. 
 - Confirmed that on selecting delete, an alert is fired requiring another click to proceed. 
-
-
-
-
-###### Edit Sagas
-- User can only add an entry/saga if they are logged in.
-- On the singleSaga page, verified that the edit button is only displayed if logged in.
-- Verified that only particular fields are required, but that all filled categories appear in-full on form. 
-- Confirmed that entry is added to the database and by marking it on site.
-
-###### Delete Sagas
-- On the singleSaga page, verified that the delete button is only displayed if logged in.
-- Confirmed that the saga is deleted by checking database.
-
-###### My Sagas
-- Verified that only sagas added by the user are displayed.
-- Confirm that the user only sees this page if logged in.
-- Pagination is present only if user has more than 6 entries selected.
-
-###### Logout
-- Verified that the user is returned to home and logged out.
-
-**singleSaga Page**
-- Confirm that clicking on the "Read More" Sagas link directs to a detailed version of the entry/saga.
-- Verified that the correct details are in the correct positions for each entry.
-- Verified the social media links are working properly.
-- Confirmed that the user like/dislike buttons are working correctly, and that user must be logged in to vote.
-
-**Search by Keyword**
-- Enter a terms into the search form and confirm that the correct results are returned with paginaition if neccessary.
-
-**Error Pages**
- - Try going to [http://sagacity.herokuapp.com/404](http://sagacity.herokuapp.com/404) and see a custom 404 error.
- - Confirmed that there was a working link back to safety.
 
 --
 
