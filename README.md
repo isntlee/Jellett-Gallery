@@ -288,7 +288,7 @@ Manual tests were carried out and the testing process was as follows:
 
 ## Deployment
 
-#### Source control and deployment was carried out primarilly via [GitHub](https://github.com/isntlee/sagacity) and [Heroku](https://sagacity.herokuapp.com/)
+#### Source control and deployment was carried out primarilly via [GitHub](https://github.com/isntlee/Jellett_Gallery) and [Heroku](https://jellett-gallery.herokuapp.com/)
 
 ### Local Deployment
 
@@ -363,21 +363,44 @@ _Warning this command may differ depending on your operating system.
 
 ### Remote Deployment
 
-This site is currently deployed here on [**Heroku**](https://sagacity.herokuapp.com/) using the **master** branch on GitHub. To implement this project on Heroku, the following steps were taken:
+This site is currently deployed here on [**Heroku**](https://jellett-gallery.herokuapp.com/) using the **master** branch on GitHub. To implement this project on Heroku, the following steps were taken:
 
-1. Create a new Heroku App - unique name
-2. In GitPod login to Heroku through CLI to confirm existance of app. `CLI: heroku login. CLI: heroku apps`.
-3. Connect GitPod to Heroku. Use code found on Heroku. `CLI - $heroku git remote -a sagacity`
-4. Create requirements.txt file - `CLI: pip3 freeze --local > requirements.txt`
-5. Create Procfile - `echo web:python app.py>Procfile`
-6. Add and Commit to Git Repository
-7. Push to Heroku using code supplied by Heroku
-8. `CLI - heroku ps:scale web=1` Command to tell Heroku to run the app
-9. Login to Heroku to add config variables:
-    - **IP**: 0.0.0.0
-    - **Port**: 8080
-    - **SECRET_KEY**: your secret key
-    - **Mongo_URI**: link to Mongo DB
+### How to 
+
+1. Create a `requirements.txt` file using the terminal command `pip3 freeze > requirements.txt`.
+
+2. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+
+3. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps).
+
+4. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+5. Confirm the linking of the heroku app to the correct GitHub repository.
+
+6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+| Key | Value |
+--- | ---
+AWS_ACCESS_KEY_ID | `<your secret key>`
+AWS_SECRET_ACCESS_KEY | `<your secret key>`
+AWS_STORAGE_BUCKET_NAME | `<your AWS S3 bucket name>`
+DATABASE_URL | `<your postgres database url>`
+SECRET_KEY | `<your secret key>`
+STRIPE_PUBLISHABLE | `<your secret key>`
+STRIPE_SECRET | `<your secret key>`
+
+8. From the command line of your local IDE:
+    - Enter the heroku postres shell 
+    - Migrate the database models 
+    - Create your superuser account in your new database
+
+9. In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
+
+10. Once the build is complete, click the "View app" button provided.
 
 
 ### Database setup/collections:
