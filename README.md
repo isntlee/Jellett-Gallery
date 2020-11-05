@@ -257,7 +257,7 @@ Manual tests were carried out and the testing process was as follows:
 - If user enters an incorrect set of details, the error message will fire. 
 - If user enters the correct login details they are returned to the homepage. 
 
-###### My Account Page
+###### My Account Page (Profile)
 - Verified that the user details are present. 
 - If bids/orders have been made then order details visible. 
 - If bids/orders have been made then billing details visible. 
@@ -267,19 +267,50 @@ Manual tests were carried out and the testing process was as follows:
 - Confirm that on hovering over Artist list/links that display box changes image, and link changes colour. 
 - Verified that by clicking all links, all lead to the Artist's personal collection page.
 
-###### Artists Collection Page
+###### Artists Collection Page (Products)
 - Verified that the artists's personal image and introduction is present 
 - Confirmed that all nine artworks are displayed and all links to artwork detail pages are active/functional.
 
-###### Artwork Detail Page
+###### Artwork Detail Page (Product Detail)
 - Verified that the artwork image and details are present. 
 - Confirmed that the "Keep Browsing" button is functional, and returns to artist's collection page. 
 - Confirmed that the "Add to Bid" button is functional, leads to number increasing on cart icon and message appears "Added ..... to your bid"
 
-###### Add Sagas
-- User can only add an entry/saga if they are logged in.
-- Verified that only particular fields are required.
-- Confirmed that entry is added to the database and by marking it on site.
+###### Bid Details Page (Bag/Cart)
+- Verified that if item in bag/cart, it is visible on page as image, title, artist and offer/price.
+- Confirmed that any totals for items are correct. 
+- Confirmed that clicking "Click here to remove" does in fact remove item.
+- Confirmed that  "Keep Browsing" and "Make Bid " buttons both work, directing user to appropriate destination.
+
+###### Your Bid Page (Checkout)
+- Verified that item/items are visible on page as image, title and offer/price.
+- Confirmed that all totals whether postage included or not are correct.  
+- Confirmed that all forms present are functional. 
+- Verified that user details present, and if previously ordered then postage address details also present. 
+- Confirmed that test credit card number "4242 4242 4242 4242", Exp: 04/24. Security no: 242. Postcode: 42424; lead to a successful payment. 
+
+###### Thank You Page (Checkout - Success)
+- Verified that page opens after successful test payment  and that message of same is visible. 
+- Confirmed that there is a novel order number in place, and that all form fields are filled.  
+- Confirmed that unregistered users pay full postage while registered users do not.
+- Verified that "Return to Collection" button does return user to Artists page.
+
+###### Search
+- Enter a term into the search form and confirm that the correct results are returned. 
+- Verified that sort-by function operates correctly. 
+
+###### Logout
+- Verified that the user is returned to home and logged out.
+
+###### Committee Member Access (SuperUser)
+- Verified that the option "Collections" is now availiable, and that this link leads to the Collections Management Page. 
+- On the Collection Management Page, verifed that all nine form fields are availiable and that the image select function operates. 
+- Confirmed that added pieces/items are added to the relevant collection and are searchable. 
+- On the Artwork Detail page, that the options edit and delete are visible/functional.
+- Confirmed that on selecting edit, superuser led to edit page which has all nine active form fields and that the image select function operates.
+- Confirmed that edited pieces/items are added to the relevant collection and are searchable. 
+- Confirmed that on selecting delete, superuser led to edit page which has all nine active form fields and that the image select function operates.
+
 
 ###### Edit Sagas
 - User can only add an entry/saga if they are logged in.

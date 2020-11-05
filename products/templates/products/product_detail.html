@@ -43,8 +43,10 @@
                     <p class="mt-5 mb-5">Copyright held by the Artist</p>
                     {% if request.user.is_superuser %}
                         <small class="mt-5">
-                            <form action="{% url 'delete_product' product.id %}" method="POST" id="deleteForm"></form>
-                            <button class="text-primary btn p-0" href="{% url 'edit_product' product.id %}">Edit</button> 
+                            <form action="{% url 'delete_product' product.id %}" method="POST" id="deleteForm">
+                            {% csrf_token %}
+                            </form>
+                            <button class="text-primary btn p-0" type="submit" href="{% url 'edit_product' product.id %}">Edit</button> 
                             <button class="text-danger btn p-0" onclick="sweetAlert_delete();">Delete</button> 
                         </small>
                     {% endif %}
