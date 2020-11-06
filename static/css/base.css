@@ -1,5 +1,5 @@
 html {
-    height: 120vh;
+    height: 105vh;
     scroll-behavior: smooth;
 }
 
@@ -156,6 +156,13 @@ body {
     min-width: 7rem;
 }
 
+.card {
+    background-color: #fafafa;
+}
+
+.card-footer {
+    background-color: #fafafa;
+}
 
 .icon {
     align-items: center;
@@ -236,7 +243,7 @@ button:focus {
 
 a.category-badge > span.badge:hover {
     background: #212529 !important;
-    color: #fff !important;
+    color: #fafafa !important;
 }
 
 .artists-picture {
@@ -244,7 +251,7 @@ a.category-badge > span.badge:hover {
 }
 
 .artists-bio-text {
-    height: 60vw;
+    height: 70vw;
     white-space: pre-wrap;
 }
 
@@ -375,7 +382,7 @@ input[name='q']::placeholder {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #fafafa;
     text-align: center;
     vertical-align: middle;
     user-select: none;
@@ -432,11 +439,11 @@ input[name='q']::placeholder {
 @media (max-width: 1600px) {
 
     .artists-picture {
-    height: 25vw;
+    height: 35vw;
 }
 
     .artists-bio-text {
-    height: 30vw;
+    height: 40vw;
 }
 
 }
@@ -465,11 +472,11 @@ input[name='q']::placeholder {
 }
 
     .artists-picture {
-    height: 45vw;
+    height: 50vw;
 }
 
     .artists-bio-text {
-    height: 45vw;
+    height: 50vw;
 }
 
  }
@@ -477,11 +484,11 @@ input[name='q']::placeholder {
  @media (max-width: 1200px) {
 
     .artists-picture {
-    height: 55vw;
+    height: 75vw;
 }
 
     .artists-bio-text {
-    height: 55vw;
+    height: 75vw;
 }
     .fa-stack-1x {
     font-size: 0.60em!important;

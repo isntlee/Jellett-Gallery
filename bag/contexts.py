@@ -4,6 +4,9 @@ from products.models import Product
 
 def bag_contents(request):
 
+    """ Creates here the initial logic/equations"""
+    """that dictate the later checkout transactions """
+
     bag_items = []
     total = 0
     delivery = 0

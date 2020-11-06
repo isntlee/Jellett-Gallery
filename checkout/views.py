@@ -34,6 +34,20 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+        "gets the stripe keys and opens get the cart with a empty dictionary"
+        "grabs the form data, pid, original_cart from json dumps and"
+         "saves order then iterates through cart.items. Then saves to"
+        "order_line_item. If the except happens an error message happens"
+        "and redirect back to cart. If the user is authenticated looks for"
+         "saved data and initialise the form with saved data Redirect back
+         to products"
+    """
+
+    #
+    # See, Pretty Printed:  (
+    # "https://www.youtube.com/watch?v=JwhEjEqG43M&list=PLXmMXHVSvS&ab_channel=PrettyPrinted)
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -145,7 +159,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handles only the successful checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
