@@ -33,13 +33,27 @@ This site was created to fill a, testing to see if postgres, now works or not
 
 ---
 
-## UX
+# UX
+
+### Project Goals
+
+The aim of this project is to sell/promote the work of the gallery's artists. The project will showcase their work as well as offering them for open bidding/purchase.  Non-registered users can browse the collection, add items to a bid, make a bid and make payments. Registered users will have these completed bids displayed in their  "My Account" page. Registered users are not expected to pay an extra fee for postage, however unregistred users are. The project has also included scope for superuser access, or for committe member access. The gallery is operated as a collective with group responsibilty, a committee member has the ability to add/edit/delete individual pieces from the gallery collection. This is to allow the members to fully control their own collections.
+
+#### Target Audience Goals
+
+- To introduce and promote the work of the artist
+-  An easy to use layout and design that works on any device
+-  Be able to browse the artworks, and make bids/purchases
+-  Registered users should be able to view their account and order history
+
+#### Client/Site Owner Goals
+
+-  Promote the work of the artists/committee members
+-  Generate funds through the bidding/purchase system
+-  Allow artists/committee members full control over their own collection in a user-friendly means
+
 
 ### User Stories
-
-"**As a user I want to...**" 
-
-## User Stories
 
 "**As a visitor to the Jellett Gallery I expect/want...**"
 
@@ -73,7 +87,7 @@ This site was created to fill a, testing to see if postgres, now works or not
 
 
 
-### Design
+## Design
 
 #### Framework
 
@@ -107,7 +121,9 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 
 -- 
 
-## Features
+# Features
+
+## Current Features
 
 ### Artists
 
@@ -140,7 +156,7 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
     - Unregisterd users are charged full delivery on their orders, while registered users are not charged at all. This feature is not mentioned on the site for several reasons; firstly, any attempt to offer "money off" might tarnish the gallery's reputation/brand and it was felt at commitee level that registering members/users should be encouraged but not blatantly.  
     - Successful payment leads to a confirmation page, that outlines the order's details in full and indicates that an email will be sent to the user's email address.
 
-### Exhibitions/About Used
+### Exhibitions/About Us Links
 
 - These links lead to informative pages that are not interactive. They do have external informative links but that's the limit of their function. 
 
@@ -173,7 +189,7 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 
 --
 
-## Technologies
+# Technologies
 
 - [Gitpod](https://www.gitpod.io/) - Used as my IDE for coding.
 - [GitHub](https://github.com/) - Used as remote storage of my code.
@@ -208,7 +224,7 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 
 --
 
-## Testing 
+# Testing 
 
 ### Validators
 
@@ -237,6 +253,11 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 - There are two varieties of tests: route/form tests watching clear behaviour and tests verifying actions. 
     - Behavior: testing routes/forms, asserting that all cases behave correctly and returning a request succeed status 200. 
     - Verify actions: the tests created concern writing/deleting from the database. 
+
+#### Travis
+
+- [Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site. The [Travis Documentation](https://docs.travis-ci.com/) provides all the info needed to set it up.
+- I set the heroku deployment settings for this project to only allow deployment when the travis had passed the latest push to the master branch on GitHub.
 
 ### Compatibility
 
@@ -353,7 +374,6 @@ To access full functionality on the site locally, you will need to create accoun
     ```
     git clone https://github.com/isntlee/Jellett_Gallery
     ```
-
 2. Navigate to this folder in your terminal.
 
 3. A virtual environment is recommended for the Python interpreter. Enter the command:
@@ -366,14 +386,12 @@ _Warning : **This Python command may differ** depending on operating system, the
     ```
     .venv\bin\activate 
     ```
-_Warning this command may differ depending on your operating system. 
-
+**This command may differ** depending on your operating system. 
 
 5. Install all the requirements and dependancies with the command 
     ```
     pip3 -r requirements.txt.
     ```
-
 6. Within your IDE create a file where you can store your sensitive information for the app, I would advise an env.py file.
     ```
     import os
@@ -381,25 +399,20 @@ _Warning this command may differ depending on your operating system.
     os.environ.setdefault("STRIPE_SECRET", "your_stripe_secret_key")
     os.environ.setdefault("SECRET_KEY", "your_django_secret_key")
     ```
-
-
 7. If you have restarted your machine to activate your environment variables, do not forget to reactivate your virtual environment with the command used at step 4.
 
 8. Migrate the admin panel models to create your database template with the terminal command
     ```
     python3 manage.py migrate
     ```
-
 9. Create your superuser to access the django admin panel and database with the following command, and then follow the steps to add your admin username and password:
     ```
     python3 manage.py createsuperuser
     ```
-
 10. You can now run the program locally with the following command: 
     ```
     python3 manage.py runserver
     ```
-
 11. Once the program is running, go to the local link provided and add `/admin` to the end of the url. Here log in with your superuser account.
 
 
@@ -446,11 +459,18 @@ STRIPE_SECRET | `<your secret key>`
 10. Once the build is complete, click the "View app" button provided.
 
 
-### Database setup/collections:
+
+## Database Design:
+
+- [PostgreSQL](https://www.postgresql.org/) - For production database, provided by Heroku.
+- [SQlite3](https://www.sqlite.org/index.html) - For development database, provided by Django.
+
+
+### Data Models:
 
 **Users**
 
-The User model utilized for this project is the standard one provided by `django.contrib.auth.models`
+The User model utilized for this project is the standard one provided by **`django.contrib.auth.models`**
 
 **Artists(Categories)**
 ```
