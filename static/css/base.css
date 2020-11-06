@@ -834,6 +834,6 @@ input[name='q']::placeholder {
     }
 
     .dropdown-menu {
-    min-width: 6.5rem;
-  
+    min-width: 6.5rem;  
+    }
 }
