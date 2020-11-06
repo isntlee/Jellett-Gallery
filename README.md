@@ -103,7 +103,7 @@ The aim of this project is to sell/promote the work of the gallery's artists. Th
 #### Aesthetic
 
 The central ambition of the gallery is to promote the art. The aesthetic was chosen to make sure the images take centre stage. This is achieved by bold uncluttered text, and a central monochrome contrast. In an effort to instill a professional impression, the decision was made to limit the palette to the gallery conventions. 
-![](images/jellett_gallery_colour_scheme.png)
+
 - (#FAFAFA)(**off-white** - *central colour*)
 - (#020202)(**off-black** - *contrast colour*)
 - (#555555)(**light-grey** - *link colour*)
@@ -359,6 +359,7 @@ Manual tests were carried out and the testing process was as follows:
  - If user is logged-in; “My Account” is displayed in the dropdown menu after clicking the account icon and clicking this link brings you to the "My Account" page.
  - If user is not logged-in; "Register" and “Login” isdisplayed in the dropdown menu after clicking the account icon and clicking either link will bring you to that page.
  - Search Button - click to open search bar. 
+ - All functions are operation, clean and crisp.
 
 ###### Register/Sign-Up Page
 - Verify that clicking on the link brings user to the registration page. 
