@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %} 
+
+<!-- {% load static %} -->
+
+{% block content %}
+<div class="center-align somethings_wrong">
+    <img src="{% static 'images/SomeThing.jpg' %}" alt="Something is very wrong">
+    <h3 class="bolder">Something is very wrong</h3>
+    <p><a href="{% url 'home' %}">Back to Safety</a></p>
+</div>
+{% endblock %}

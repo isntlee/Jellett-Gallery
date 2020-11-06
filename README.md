@@ -2,7 +2,7 @@
 
 # **Jellett Gallery**
 
-This site was created to, again, fill a niche. There is no gallery in the country that exhibits solely female artists. Due to the disparities in public exposure for male and female artists, a female-focused space would be dearly appreciated. This gallery then becomes a space to promote young, upcoming female talent in Irish art world. This site was built/designed with that goal in mind. This project uses as its model, the concept of a collectively administered gallery. Where access between the collective should be equal, this is reflected in several design choices. 
+This site was created to fill a niche. There is no gallery in the country that exhibits female artists solely. Due to the disparities in public exposure for male and female artists, a female-focused space would seemimgly be dearly appreciated. This gallery is a space to promote young, upcoming female talent in the Irish art world. The site was built/designed with that goal in mind. This project uses as its guide, the concept of a collectively administered gallery; where access between the collective should be equal, this is reflected in several design choices. 
 
 [![Build Status](https://travis-ci.com/isntlee/Jellett_Gallery.svg?branch=master)](https://travis-ci.com/github/isntlee/Jellett_Gallery)
 ---
@@ -85,9 +85,9 @@ The aim of this project is to sell/promote the work of the gallery's artists. Th
 
 1. To be able to find information easily on my past orders and how to cancel an order. 
 
-1. To be able to easily get in contact with the shop owner via their contact details.
+1. To be able to easily get in contact with the gallery owners via their contact details.
 
-1. Feedback from the website I am using when I interact with it, I expect pop ups and modals to inform me when my forms have been completed and sent correctly. Or to let me know when an error has ocurred and what to do next.
+1. Feedback from the website I am using when I interact with it, I expect pop-ups/toasts/messages to inform me when my forms have been completed and sent correctly. Or to let me know when an error has ocurred and what to do next.
 
 
 
@@ -104,8 +104,8 @@ The aim of this project is to sell/promote the work of the gallery's artists. Th
 
 The central ambition of the gallery is to promote the art. The aesthetic was chosen to make sure the images take centre stage. This is achieved by bold uncluttered text, and a central monochrome contrast. In an effort to instill a professional impression, the decision was made to limit the palette to the gallery conventions. 
 
-- (#FAFAFA)(**off-white** - *central color*)
-- (#020202)(**off-black** - *contrast color*)
+- (#FAFAFA)(**off-white** - *central colour*)
+- (#020202)(**off-black** - *contrast colour*)
 - (#555555)(**light-grey** - *link colour*)
 - (#33ADFF)(**light-blue** - *hover effect*)
 
@@ -240,7 +240,18 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 
 The User model utilized for this project is the standard one provided by **`django.contrib.auth.models`**
 
-**Artists(Category model)**
+\
+**OrderLineItem**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order | order | on_delete=models.CASCADE | ForeignKey
+Product | product | on_delete=models.CASCADE | ForeignKey
+Quantity | date | default=1 | IntegerField
+Lineitem Total | lineitem_total | max_digits=6 | DecimalField
+
+\
+**Category model**
 
 | Name | Key in db | Validation | Field Type |
 --- | --- | --- | ---
@@ -250,8 +261,8 @@ Description | description | blank=True | TextField
 Image Url | image_url | max_length=1024 | URLField
 Image | image | blank=True | ImageField
 
-
-**Bids(Order model)**
+\
+**Order model**
 
 | Name | Key in db | Validation | Field Type |
 --- | --- | --- | ---
@@ -270,21 +281,12 @@ County | county | max_length=80, blank=True | Charfield
 Registered | is_registered | default=False | BooleanField
 Delivery Cost | delivery_cost | max_digits=6 | Decimalfield
 Order Total | order_total | max_digits=10 | Decimalfield 
-Grand Total  | grand_total | max_digits=6 | Decimalfield
+Grand Total | grand_total | max_digits=6 | Decimalfield
 Original Bag | original_bag | default='' | TextField
 Stripe PID | stripe_pid | max_length=254 | Charfield
 
-**OrderLineItem**
-
-| Name | Key in db | Validation | Field Type |
---- | --- | --- | ---
-Order | order | on_delete=models.CASCADE | ForeignKey
-Product | product | on_delete=models.CASCADE | ForeignKey
-Quantity | date | default=1 | IntegerField
-Lineitem Total | lineitem_total | max_digits=6 | DecimalField
-
-
-**Artwork(Product model)**
+\
+**Product model**
 
 | Name | Key in db | Validation | Field Type |
 --- | --- | --- | ---
@@ -319,7 +321,7 @@ Image | image | blank=True | ImageField
         '$' , 'M', 'swal' 
 - [JSLint](https://jslint.com/)
     - For JS file, there are two warnings concerning unexpected use of terms with the search-bar code. These unexpected terms are both "for" as in those used in a "for" loop, this is not a serious concern.  
-    - For jQuery, all the warning are particularly minor and centre around undeclared/unexpected terms, the major warnings are about "$" or "document". This is not that helpful.   
+    - For jQuery, all the warnings are particularly minor and centre around undeclared/unexpected terms, the major warnings are about "$" or "document". This is not that helpful.   
 
 **Python**
 - [PEP8 Online](http://pep8online.com/)
@@ -353,7 +355,7 @@ Manual tests were carried out and the testing process was as follows:
 **Landing Page**
  - Click "Jellett Gallery" and verified that home page appears.
  - Click on "Artists" button  - verified redirect to view "Artists" page.
- - Click on "Exbibitions" button  - verified redirect to view "Exbibitions" page.
+ - Click on "Exhibitions" button  - verified redirect to view "Exhibitions" page.
  - Click on "About" button  - verified redirect to view "About" page.
  - Click on "Bag" icon  - verified redirect to view "Bid Details" page. If items have been added to bid, a number displays on the "Bag" icon. 
  - If user is logged-in; “My Account” is displayed in the dropdown menu after clicking the account icon and clicking this link brings you to the "My Account" page.
@@ -447,7 +449,7 @@ To access full functionality on the site locally, you will need to create accoun
     - [AWS](https://aws.amazon.com/) and [set up an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
 
 
-### How to 
+### Instructions 
 1. Clone the Jellett Gallery repository by either downloading from here or type the following command into your terminal:
     ```
     git clone https://github.com/isntlee/Jellett_Gallery
@@ -499,7 +501,7 @@ To access full functionality on the site locally, you will need to create accoun
 
 This site is currently deployed here on [**Heroku**](https://jellett-gallery.herokuapp.com/) using the **master** branch on GitHub. To implement this project on Heroku, the following steps were taken:
 
-### How to 
+### Instructions
 
 1. Create a `requirements.txt` file using the terminal command `pip3 freeze > requirements.txt`.
 

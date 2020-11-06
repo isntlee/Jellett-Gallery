@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+<!-- {% load static %} -->
+
+{% block content %}
+<div class="page_not_found">
+    <img src="{% static 'images/Travolta_lost.gif' %}" alt="John Travolta lost">
+    <h3 class="bolder">This is a 404 Error</h3>
+    <p>The page you requested can't be found.</p>
+    <p><a href="{% url 'home' %}">Back to Safety</a></p>
+</div>
+{% endblock %}
+
