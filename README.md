@@ -103,7 +103,7 @@ The aim of this project is to sell/promote the work of the gallery's artists. Th
 #### Aesthetic
 
 The central ambition of the gallery is to promote the art. The aesthetic was chosen to make sure the images take centre stage. This is achieved by bold uncluttered text, and a central monochrome contrast. In an effort to instill a professional impression, the decision was made to limit the palette to the gallery conventions. 
-
+![](images/jellett_gallery_colour_scheme.png)
 - (#FAFAFA)(**off-white** - *central colour*)
 - (#020202)(**off-black** - *contrast colour*)
 - (#555555)(**light-grey** - *link colour*)
@@ -121,7 +121,8 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
 
 ### Wireframes
 
-- The wireframes for this site were made with [draw.io](https://www.draw.io/), and accessible in the folder [wireframes](https://github.com/isntlee/sagacity/tree/master/wireframes)
+- The wireframes for this site were made with [draw.io](https://www.draw.io/), and accessible in the folder [wireframes](https://github.com/isntlee/Jellett_Gallery/tree/master/static/wireframes)
+
 
 -- 
 
@@ -312,16 +313,13 @@ Image | image | blank=True | ImageField
 - [W3C HTML Validator](https://validator.w3.org) - The code is valid. 
 
 **CSS**
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - The code is valid. The only warnings concern imported items: AWS functions, and Bootstrap details. 
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - The code is valid. However, errors fire due to the presence of Bootstrap framework in the base.html head. I have been told by tutor support to mention that "these are false positive results" and "this happens occasionally with third party libraries". The only warnings concern this same imported item: Bootstrap. 
 
 **JavaScript**
 - [JShint](https://jshint.com/)
-    - The code is valid, all undefined/unused variables are concerned with jQuery, Materialize and SweetAlert
+    - The code is valid, all undefined/unused variables are concerned with jQuery, Stripe and SweetAlert
     - The three undefined variables:
-        '$' , 'M', 'swal' 
-- [JSLint](https://jslint.com/)
-    - For JS file, there are two warnings concerning unexpected use of terms with the search-bar code. These unexpected terms are both "for" as in those used in a "for" loop, this is not a serious concern.  
-    - For jQuery, all the warnings are particularly minor and centre around undeclared/unexpected terms, the major warnings are about "$" or "document". This is not that helpful.   
+        '$' , 'stripe', 'swal'    
 
 **Python**
 - [PEP8 Online](http://pep8online.com/)
@@ -428,6 +426,8 @@ Manual tests were carried out and the testing process was as follows:
 - Confirmed that edited pieces/items are added to the relevant collection and are searchable. 
 - Confirmed that on selecting delete, an alert is fired requiring another click to proceed. 
 
+### Known Issues:
+- Errors fire from the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) due to the presence of Bootstrap framework in the base.html head. I have been told by tutor support to mention that "these are false positive results" and "this happens occasionally with third party libraries"
 --
 
 ## Deployment

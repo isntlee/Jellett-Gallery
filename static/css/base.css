@@ -454,11 +454,8 @@ input[name='q']::placeholder {
     color: #fff;
     text-align: center;
     vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
-    background-color: #000;
+    background-color: #010101;
     border: 1px solid #000;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -472,7 +469,7 @@ input[name='q']::placeholder {
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
 	color: #fff;
-    background-color: #111;
+    background-color: #010101;
     border-color: #111;
 }
 
@@ -499,12 +496,12 @@ input[name='q']::placeholder {
 
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
-    border-color: #dc3545;
+    border-color: #dc3546;
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #dc3545;
-    border-color: #dc3545;
+    border-color: #dc3544;
     border-radius: 0;
 }
 
