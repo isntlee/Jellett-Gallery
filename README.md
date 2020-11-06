@@ -2,7 +2,7 @@
 
 # **Jellett Gallery**
 
-This site was created to fill a niche. There is no gallery in the country that exhibits female artists solely. Due to the disparities in public exposure for male and female artists, a female-focused space would seemimgly be dearly appreciated. This gallery is a space to promote young, upcoming female talent in the Irish art world. The site was built/designed with that goal in mind. This project uses as its guide, the concept of a collectively administered gallery; where access between the collective should be equal, this is reflected in several design choices. 
+This site was created to fill a niche. There is no gallery in the country that exhibits female artists solely. Due to the disparities in public exposure for male and female artists, a female-focused space would seemimgly be dearly appreciated. This gallery is a space to promote young, upcoming female artists in the Ireland. The site was built/designed with that goal in mind. This project uses as its guide, the concept of a collectively administered gallery; where access between the collective should be equal, this is reflected in several design choices. 
 
 [![Build Status](https://travis-ci.com/isntlee/Jellett_Gallery.svg?branch=master)](https://travis-ci.com/github/isntlee/Jellett_Gallery)
 ---
