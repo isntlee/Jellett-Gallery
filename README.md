@@ -39,21 +39,39 @@ This site was created to fill a, testing to see if postgres, now works or not
 
 "**As a user I want to...**" 
 
-- be informed of the site's purpose and functions.
-- navigate easily through the entries.
-- navigate the map, and view various entries.  
-- browse the site as a guest.
-- create a user profile, log in and out.
-- add, edit and delete my own entries through my user account.
-- like/dislike a saga, as long as I am logged in as a user.
-- receive an error message if I am unable to login or register.
-- be able to access the site from any device (mobile, tablet, desktop).
-- search easily for a entry.
-- see the total likes/dislikes of an entry.
-- share an entry on an variety of platforms. 
-- be able to see the total number of entries.
-- be able to see the details of the entry.
-- be prompted to sign up or add an entry.
+## User Stories
+
+"**As a visitor to the Jellett Gallery I expect/want...**"
+
+1. To be able to easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it. 
+
+1. The information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.
+
+1. The ability to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
+
+1. The site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
+
+1. To learn more about the gallery and their artists, so that I can be assured I am bidding on a worthwhile piece. 
+
+1. For all information and images to be laid out in a clear and easy to understand way, on whatever size screen I am viewing the website on.
+
+1. Plenty of high quality images of the products for sale, so I have a clear idea of what I am buying and can see the quality of the products up close.
+
+1. To be able to easily find out all the information I need to make an informed bid. I expect information about materials, measurements, and when in the artist's career they completed the work.
+
+1. A text search function so that I can quickly narrow down my search when looking for something specific.
+
+1. To be able to see a summary of my order on every page of the checkout process.
+
+1. That once I am logged in I can access my account details and update them if I need to. 
+
+1. To be able to find information easily on my past orders and how to cancel an order. 
+
+1. To be able to easily get in contact with the shop owner via their contact details.
+
+1. Feedback from the website I am using when I interact with it, I expect pop ups and modals to inform me when my forms have been completed and sent correctly. Or to let me know when an error has ocurred and what to do next.
+
+
 
 ### Design
 
@@ -430,45 +448,69 @@ STRIPE_SECRET | `<your secret key>`
 
 ### Database setup/collections:
 
-**sagaEra**
+**Users**
+
+The User model utilized for this project is the standard one provided by `django.contrib.auth.models`
+
+**Artists(Categories)**
 ```
-_id: <ObjectId>
-eraName: <string>
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Name | name | max_length=100 | CharField
+Friendly Name | friendly_name, blank=True | max_length=100 | CharField
+Description | description | blank=True | TextField
+Image Url | image_url | max_length=1024 | URLField
+Image | image | blank=True | ImageField
 ```
 
-**sagaSite**
+**Bids(Orders)**
 ```
-_id: <ObjectId>
-siteName: <string>
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order Number | order_number | max_length=32 | CharField
+Username | user_profile | on_delete=models.SET_NULL, blank=True | ForeignKey
+Date | date | auto_now_add=True | DateTimeField
+Full Name | full_name | max_length=50 | CharField
+Email | email | max_length=254 | EmailField
+Phone Number | phone_number | max_length=20 | Charfield
+Country | country | blank_label='Country *' | CountryField
+Postcode | postcode | max_length=20, blank=True | Charfield
+Town/City | town_or_city | max_length=40 | Charfield
+Street Address 1 | street_address1 | max_length=80 | Charfield
+Street Address 2 | street_address2 | max_length=80, blank=True | Charfield
+County | county | max_length=80, blank=True | Charfield
+Registered | is_registered | default=False | BooleanField
+Delivery Cost | delivery_cost | max_digits=6 | Decimalfield
+Order Total | order_total | max_digits=10 | Decimalfield 
+Grand Total  | grand_total | max_digits=6 | Decimalfield
+Original Bag | original_bag | default='' | TextField
+Stripe PID | stripe_pid | max_length=254 | Charfield
 ```
 
-**users**
+**OrderLineItem**
 ```
-_id: <ObjectId>
-name: <string>
-password: <string>
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order | order | on_delete=models.CASCADE | ForeignKey
+Product | product | on_delete=models.CASCADE | ForeignKey
+Quantity | date | default=1 | IntegerField
+Lineitem Total | lineitem_total | max_digits=6 | DecimalField
 ```
 
-**sagas**
+**Artwork(Products)**
 ```
-_id: <ObjectId>
-sagaTitle: <string>
-sagaTagline: <string>
-sagaImage: <string>
-lat: <string>
-lng: <string>
-intro: <string>
-body: <string>
-conclusion: <string>
-eraName: <string>
-siteName: <string>
-total_time: <string>
-dateFull: <string>
-dateCard: <string>
-authorName: <string>
-wordCount: <int 32>
-readingTime: <int 32>
-totalLikes: <int32>
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Name | name | max_length=254 | CharField
+Category | category | on_delete=models.SET_NULL | ForeignKey
+Category Friendly | category_friendly, blank=True | max_length=254 | CharField
+Sku | sku | max_length=254, blank=True | CharField
+Description | description | blank=False | TextField
+Dimensions | dimensions | max_length=12, blank=True | CharField
+Year | year | max_length=1024, blank=True | IntegerField
+Offer | offer | max_digits=6 | DecimalField
+Image Url | image_url | max_length=1024 | URLField
+Image | image | blank=True | ImageField
 ```
 
 ## Credits: 
