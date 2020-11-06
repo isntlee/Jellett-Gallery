@@ -59,7 +59,7 @@
                             <div><i class="fas fa-search fa-lg"></i></div>
                         </div>
                     </a>
-                    <div class="dropdown-menu border-0 w-100 pt-2 pb-0 pl-3 pr-2 rounded-0 my-0" aria-labelledby="mobile-search">
+                    <div class="dropdown-menu border-0 w-100 pt-2 pb-0 pl-3 pr-2 rounded my-0" aria-labelledby="mobile-search">
                         <form class="form" method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
                                 <input class="form-control" type="text" name="q" placeholder="" autocomplete="off">
@@ -111,8 +111,8 @@
                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
                     <a href="{% url 'artists' %}" class="dropdown-item">Artists</a>
                     <a href="{% url 'exhibitions' %}" class="dropdown-item">Exhibtions</a>
-                    <a href="{% url 'about' %}" class="dropdown-item">About</a>
                     <a href="{% url 'view_bag' %}" class="dropdown-item">View Bid</a>
+                    <a href="{% url 'about' %}" class="dropdown-item">About</a>
                 </div>
             </li>
             <li class="list-inline-item dropdown">
@@ -127,10 +127,12 @@
                         {% if request.user.is_superuser %}
                             <a href="{% url 'add_product' %}" class="dropdown-item">Collections</a>
                         {% endif %}
-                        <a href="" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
+                        <a href="{% url 'view_bag' %}" class="dropdown-item">View Bid</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                     {% else %}
                         <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'view_bag' %}" class="dropdown-item">View Bid</a>
                         <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                     {% endif %}
                 </div>

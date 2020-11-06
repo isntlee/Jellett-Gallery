@@ -167,9 +167,12 @@ body {
 } */
 
 .dropdown-item {
-    padding: .25rem .01rem!important;
+    padding: .25rem .01rem .25rem .5rem!important;
 }
 
+.dropdown-menu {
+    min-width: 7rem;
+}
 /* from Bulma */
 .icon {
     align-items: center;
@@ -559,6 +562,10 @@ input[name='q']::placeholder {
     .artists-bio-text {
     height: 50vw;
 }
+    .fa-stack-1x {
+    font-size: 0.60em!important;
+    top: 0.75vw;
+}
 
  }
 
@@ -578,15 +585,20 @@ input[name='q']::placeholder {
     line-height: 1.1;
     }
 
+    .fa-stack-1x {
+    font-size: 0.60em!important;
+    top: 0.85vw;
+}
+
  }
 
- /* @media (max-width: 865px) {
+  @media (max-width: 865px) {
 
-    .artists-bio-text {
-    font-size: .72rem;
-    font-weight: 400;
-    line-height: 0.9;
-    } */
+    .fa-stack-1x {
+    font-size: 0.60em!important;
+    top: 0.9vw;
+    }
+} 
 
 
 /* fixed top navbar only on medium and up  */
@@ -602,6 +614,7 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 95px;
     }
+
 
 }
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -819,5 +832,8 @@ input[name='q']::placeholder {
     .carousel-caption {
     bottom: 15vw;
     }
+
+    .dropdown-menu {
+    min-width: 6.5rem;
   
 }
