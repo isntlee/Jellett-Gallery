@@ -2,13 +2,14 @@
 
 # **Jellett Gallery**
 
-This site was created to fill a, testing to see if postgres, now works or not
+This site was created to, again, fill a niche. There is no gallery in the country that exhibits solely female artists. Due to the disparities in public exposure for male and female artists, a female-focused space would be dearly appreciated. This gallery then becomes a space to promote young, upcoming female talent in Irish art world. This site was built/designed with that goal in mind. This project uses as its model, the concept of a collectively administered gallery. Where access between the collective should be equal, this is reflected in several design choices. 
 
 [![Build Status](https://travis-ci.com/isntlee/Jellett_Gallery.svg?branch=master)](https://travis-ci.com/github/isntlee/Jellett_Gallery)
 ---
 
 - [**Table of Contents:**](#table-of-contents)
     - [**UX**](#ux)
+        - [**Project Goals**](#project-goals)
         - [**User Stories**](#user-stories)
         - [**Design**](#design)
         - [**Wireframes**](#wireframes)
@@ -18,6 +19,9 @@ This site was created to fill a, testing to see if postgres, now works or not
     - [**Technologies**](#technologies)
         - [**Front-End**](#front-end)
         - [**Back-End**](#back-end)
+    - [**Database Design**](#database-design)
+        - [**Databases**](#databases)
+        - [**Data Models**](#data-models)
     - [**Testing**](#testing)
         - [**Validators**](#validators)
         - [**Automated Testing**](#automated-testing)
@@ -35,25 +39,25 @@ This site was created to fill a, testing to see if postgres, now works or not
 
 # UX
 
-### Project Goals
+## Project Goals
 
 The aim of this project is to sell/promote the work of the gallery's artists. The project will showcase their work as well as offering them for open bidding/purchase.  Non-registered users can browse the collection, add items to a bid, make a bid and make payments. Registered users will have these completed bids displayed in their  "My Account" page. Registered users are not expected to pay an extra fee for postage, however unregistred users are. The project has also included scope for superuser access, or for committe member access. The gallery is operated as a collective with group responsibilty, a committee member has the ability to add/edit/delete individual pieces from the gallery collection. This is to allow the members to fully control their own collections.
 
 #### Target Audience Goals
 
-- To introduce and promote the work of the artist
+-  To learn about the nation's finest upcoming artists
+-  Be able to browse their work, and make bids/purchases
 -  An easy to use layout and design that works on any device
--  Be able to browse the artworks, and make bids/purchases
 -  Registered users should be able to view their account and order history
 
 #### Client/Site Owner Goals
 
--  Promote the work of the artists/committee members
--  Generate funds through the bidding/purchase system
--  Allow artists/committee members full control over their own collection in a user-friendly means
+-  Promote the work of the gallery and the artists/committee members
+-  Generate funds for the gallery/committee members through the bidding/purchase system
+-  Allow artists/committee members control over their collection in a user-friendly means
 
 
-### User Stories
+## User Stories
 
 "**As a visitor to the Jellett Gallery I expect/want...**"
 
@@ -222,6 +226,80 @@ The central ambition of the gallery is to promote the art. The aesthetic was cho
     - [SQlite3](https://www.sqlite.org/index.html) - For development database, provided by Django.
 
 
+# Database Design:
+
+## Databases:
+
+- [PostgreSQL](https://www.postgresql.org/) - For production database, provided by Heroku.
+- [SQlite3](https://www.sqlite.org/index.html) - For development database, provided by Django.
+
+
+## Data Models:
+
+**Users**
+
+The User model utilized for this project is the standard one provided by **`django.contrib.auth.models`**
+
+**Artists(Category model)**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Name | name | max_length=100 | CharField
+Friendly Name | friendly_name, blank=True | max_length=100 | CharField
+Description | description | blank=True | TextField
+Image Url | image_url | max_length=1024 | URLField
+Image | image | blank=True | ImageField
+
+
+**Bids(Order model)**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order Number | order_number | max_length=32 | CharField
+Username | user_profile | on_delete=models.SET_NULL, blank=True | ForeignKey
+Date | date | auto_now_add=True | DateTimeField
+Full Name | full_name | max_length=50 | CharField
+Email | email | max_length=254 | EmailField
+Phone Number | phone_number | max_length=20 | Charfield
+Country | country | blank_label='Country *' | CountryField
+Postcode | postcode | max_length=20, blank=True | Charfield
+Town/City | town_or_city | max_length=40 | Charfield
+Street Address 1 | street_address1 | max_length=80 | Charfield
+Street Address 2 | street_address2 | max_length=80, blank=True | Charfield
+County | county | max_length=80, blank=True | Charfield
+Registered | is_registered | default=False | BooleanField
+Delivery Cost | delivery_cost | max_digits=6 | Decimalfield
+Order Total | order_total | max_digits=10 | Decimalfield 
+Grand Total  | grand_total | max_digits=6 | Decimalfield
+Original Bag | original_bag | default='' | TextField
+Stripe PID | stripe_pid | max_length=254 | Charfield
+
+**OrderLineItem**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order | order | on_delete=models.CASCADE | ForeignKey
+Product | product | on_delete=models.CASCADE | ForeignKey
+Quantity | date | default=1 | IntegerField
+Lineitem Total | lineitem_total | max_digits=6 | DecimalField
+
+
+**Artwork(Product model)**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Name | name | max_length=254 | CharField
+Category | category | on_delete=models.SET_NULL | ForeignKey
+Category Friendly | category_friendly, blank=True | max_length=254 | CharField
+Sku | sku | max_length=254, blank=True | CharField
+Description | description | blank=False | TextField
+Dimensions | dimensions | max_length=12, blank=True | CharField
+Year | year | max_length=1024, blank=True | IntegerField
+Offer | offer | max_digits=6 | DecimalField
+Image Url | image_url | max_length=1024 | URLField
+Image | image | blank=True | ImageField
+
+
 --
 
 # Testing 
@@ -357,7 +435,7 @@ Manual tests were carried out and the testing process was as follows:
 ### Local Deployment
 
 Do ensure that you have an IDE such as 
-- [Gitpod](https://www.gitpod.io/).
+- [Gitpod](https://www.gitpod.io/)
 
 Please note - in order to run this project locally on your own system, you will need the following installed:
 - [Python3](https://www.python.org/) to run the application.
@@ -380,13 +458,13 @@ To access full functionality on the site locally, you will need to create accoun
     ```
     python3 -m .venv venv
     ```  
-_Warning : **This Python command may differ** depending on operating system, the command required could be `python` or `py`_
+ - _Warning : **This Python command may differ** depending on operating system, the command required could be **python** or **py**_
 
 4. Initialize the environment by using the following command: 
     ```
     .venv\bin\activate 
     ```
-**This command may differ** depending on your operating system. 
+ - _Warning : **This command may differ** depending on your operating system_
 
 5. Install all the requirements and dependancies with the command 
     ```
@@ -458,80 +536,6 @@ STRIPE_SECRET | `<your secret key>`
 
 10. Once the build is complete, click the "View app" button provided.
 
-
-
-## Database Design:
-
-- [PostgreSQL](https://www.postgresql.org/) - For production database, provided by Heroku.
-- [SQlite3](https://www.sqlite.org/index.html) - For development database, provided by Django.
-
-
-### Data Models:
-
-**Users**
-
-The User model utilized for this project is the standard one provided by **`django.contrib.auth.models`**
-
-**Artists(Categories)**
-```
-| Name | Key in db | Validation | Field Type |
---- | --- | --- | ---
-Name | name | max_length=100 | CharField
-Friendly Name | friendly_name, blank=True | max_length=100 | CharField
-Description | description | blank=True | TextField
-Image Url | image_url | max_length=1024 | URLField
-Image | image | blank=True | ImageField
-```
-
-**Bids(Orders)**
-```
-| Name | Key in db | Validation | Field Type |
---- | --- | --- | ---
-Order Number | order_number | max_length=32 | CharField
-Username | user_profile | on_delete=models.SET_NULL, blank=True | ForeignKey
-Date | date | auto_now_add=True | DateTimeField
-Full Name | full_name | max_length=50 | CharField
-Email | email | max_length=254 | EmailField
-Phone Number | phone_number | max_length=20 | Charfield
-Country | country | blank_label='Country *' | CountryField
-Postcode | postcode | max_length=20, blank=True | Charfield
-Town/City | town_or_city | max_length=40 | Charfield
-Street Address 1 | street_address1 | max_length=80 | Charfield
-Street Address 2 | street_address2 | max_length=80, blank=True | Charfield
-County | county | max_length=80, blank=True | Charfield
-Registered | is_registered | default=False | BooleanField
-Delivery Cost | delivery_cost | max_digits=6 | Decimalfield
-Order Total | order_total | max_digits=10 | Decimalfield 
-Grand Total  | grand_total | max_digits=6 | Decimalfield
-Original Bag | original_bag | default='' | TextField
-Stripe PID | stripe_pid | max_length=254 | Charfield
-```
-
-**OrderLineItem**
-```
-| Name | Key in db | Validation | Field Type |
---- | --- | --- | ---
-Order | order | on_delete=models.CASCADE | ForeignKey
-Product | product | on_delete=models.CASCADE | ForeignKey
-Quantity | date | default=1 | IntegerField
-Lineitem Total | lineitem_total | max_digits=6 | DecimalField
-```
-
-**Artwork(Products)**
-```
-| Name | Key in db | Validation | Field Type |
---- | --- | --- | ---
-Name | name | max_length=254 | CharField
-Category | category | on_delete=models.SET_NULL | ForeignKey
-Category Friendly | category_friendly, blank=True | max_length=254 | CharField
-Sku | sku | max_length=254, blank=True | CharField
-Description | description | blank=False | TextField
-Dimensions | dimensions | max_length=12, blank=True | CharField
-Year | year | max_length=1024, blank=True | IntegerField
-Offer | offer | max_digits=6 | DecimalField
-Image Url | image_url | max_length=1024 | URLField
-Image | image | blank=True | ImageField
-```
 
 ## Credits: 
 
