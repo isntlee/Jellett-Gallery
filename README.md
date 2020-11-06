@@ -28,8 +28,8 @@ This site was created to fill a niche. There is no gallery in the country that e
         - [**Compatibility**](#compatibility)
         - [**User Testing**](#user-testing)
     - [**Deployment**](#deployment)
-        - [**Local**](#local)
-        - [**Remote**](#remote)
+        - [**Local**](#local-deployment)
+        - [**Remote**](#remote-deployment)
     - [**Credits**](#credits)
         - [**Coding**](#coding)
         - [**Content**](#content)
@@ -543,27 +543,34 @@ STRIPE_SECRET | `<your secret key>`
 
 ### Coding
 
-- [Materialize](https://www.youtube.com/watch?v=gCZ3y6mQpW0&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
-- [GoogleMaps JSON objects](https://www.youtube.com/watch?v=mfjqLmD6Li8)
-- [GoogleMaps API](https://www.youtube.com/watch?v=pFpBibg6nac)
-- [Pagination Flask/MongoDB](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
-- [Pagination Flask/MYSQL](https://www.youtube.com/watch?v=PSWf2TjTGNY)
+- [Introduction - Django](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
+- [Admin](https://www.youtube.com/watch?v=pFpBibg6nac)
+- [Databases](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
+- [AWS-S3](https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=16&ab_channel=CoreySchafer)
 - [Unit-testing](https://www.youtube.com/watch?v=6tNS--WetLI)
-- [Text Indexing](https://www.youtube.com/watch?v=dTN8cBDEG_Q)
-- [Password Hashing](https://www.youtube.com/watch?v=jJ4awOToB6k)
-- [Flask](https://www.youtube.com/watch?v=bLA6eBGN-_0)
-- [Flash messages](https://www.youtube.com/watch?v=lcVdZtVvnnk)
+- [Model Queries](https://www.youtube.com/watch?v=WimXjp0ryOo&list=PLXmMXHVSvS-DQfOsQdXkzEZyD0Vei7PKf&index=3&ab_channel=PrettyPrinted)
+- [Authentication](https://www.youtube.com/watch?v=dBctY3-Z5hY&list=PLXmMXHVSvS-DQfOsQdXkzEZyD0Vei7PKf&index=7)
+- [Deployment - Heroku](https://www.youtube.com/watch?v=6DI_7Zja8Zc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=17&ab_channel=CoreySchafer)
+- [Emails](https://www.youtube.com/watch?v=X7DWErkNVJs&list=PLXmMXHVSvS-DQfOsQdXkzEZyD0Vei7PKf&index=18&ab_channel=PrettyPrinted)
 
 ### Content 
-
+ 
+- [Bootstrap](https://getbootstrap.com/) 
+    - Elements imported largely
 - [Google Images](https://images.google.com/) 
     - All images taken from Google Image searches. 
 - [Favicon.io](https://favicon.io/) 
-    - Designed and produced flavicon 
+    - Designed and produced flavicon
+- [Hello Django](https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/course/) 
+    - The introductory CI lessions on Django are crucial to my understanding
+- [Boutique Ado](https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/course/) 
+    - The example CI project is an essential guide to the structure of this project 
 
 ### Special Thanks
 
 - [Precious Ijege](https://github.com/precious-ijege) 
     - My Code Institute mentor
-- [Corey Schafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) 
+- [Corey Schafer](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) 
     - His tutorials have been essential research for many.
+- [Tutor Support](https://courses.codeinstitute.net/%2Fcourses/course-v1:CodeInstitute+FSF_102+Q1_2020/support)
+    - The aid and encouragement offered by CI tutor support has been incredible. Thank you all. 
