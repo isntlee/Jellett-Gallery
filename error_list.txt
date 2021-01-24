@@ -3,6 +3,7 @@ Basic visual errors/fixes
 - The buy button is blacked out
 - Landing page should have further to go, and have contact details section at base
 - Definite display problems in artist section depending on screen
+- There are quire a lot of problems with large screen sizes
 - Horizontal scroll on small screen (cart/bid page)
 - Some minor fixes with hover colouring
 
