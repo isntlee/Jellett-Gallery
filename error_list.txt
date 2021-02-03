@@ -6,6 +6,8 @@ Basic visual errors/fixes
 - There are quire a lot of problems with large screen sizes
 - Horizontal scroll on small screen (cart/bid page)
 - Some minor fixes with hover colouring
+- Distance between artist bio and pieces is a problem
+- On artist select page, if cursor hovers between names: hells bells
 
 Major problems
 
