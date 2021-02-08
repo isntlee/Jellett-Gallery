@@ -8,9 +8,11 @@ Basic visual errors/fixes
 - Some minor fixes with hover colouring
 - Distance between artist bio and pieces is a problem
 - On artist select page, if cursor hovers between names: hells bells
+- Fix the bag number indicator
 
 Major problems
 
 - The set debug question not solved
 - Javascript failure for payment. This is an outstanding problem
 - See review for major errors
+- The Remove Item button doesn't work
