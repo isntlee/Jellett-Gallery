@@ -16,3 +16,6 @@ Major problems
 - Javascript failure for payment. This is an outstanding problem
 - See review for major errors
 - The Remove Item button doesn't work
+
+
+(Time estimate: two weeks)
