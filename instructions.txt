@@ -1,6 +1,7 @@
 Basic visual errors/fixes
 
 - Fix the bag number indicator
+- The initial carousel's timing is ridiculous
 - Landing page should have further to go, and have contact details section at base
 
 - Definite display problems in artist section depending on screen
