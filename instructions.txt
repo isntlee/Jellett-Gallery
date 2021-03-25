@@ -1,19 +1,10 @@
 Basic visual errors/fixes
 
-- The buy button is blacked out
+- Fix the bag number indicator
 - Landing page should have further to go, and have contact details section at base
+
 - Definite display problems in artist section depending on screen
 - There are quite a lot of problems with large screen sizes
 - Horizontal scroll on small screen (cart/bid page)
-- Some minor fixes with hover colouring
 - Distance between artist bio and pieces is a problem
-- On artist select page, if cursor hovers between names: hells bells
-- Fix the bag number indicator
-
-Major problems
-
-- The set debug question not solved
-- See review for major errors
-
-
-(Time estimate: two weeks)
+- On artist select page, if cursor hovers between names - hells bells

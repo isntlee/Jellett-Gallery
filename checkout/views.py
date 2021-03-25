@@ -185,8 +185,8 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Your bid has been successful \
-        Your order number is {order_number}. Confirmation \
+    messages.success(request, f'Your bid was successful. \
+        Your order number is -{order_number}- A confirmation \
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:

@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-3">
                     {% if user.is_authenticated %}
-                        <p class="my-0">EUR{{ grand_total | floatformat:2 }}</p>
+                        <p class="my-0"><strong>EUR{{ grand_total | floatformat:2 }}</strong></p>
                     {% else %}
                         <p class="my-0"><strong>EUR{{ grand_total | floatformat:2 }}</strong></p>	
                     {% endif %}
