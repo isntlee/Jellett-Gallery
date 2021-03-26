@@ -1,10 +1,7 @@
 Basic visual errors/fixes
 
-- Fix the bag number indicator
 - Landing page should have further to go, and have contact details section at base
-
 - Definite display problems in artist section depending on screen
 - There are quite a lot of problems with large screen sizes
 - Horizontal scroll on small screen (cart/bid page)
-- Distance between artist bio and pieces is a problem
 - On artist select page, if cursor hovers between names - hells bells

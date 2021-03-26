@@ -46,8 +46,8 @@
                                 {% endif %}
                             </a>
                         </div>
-                        <div class="col-6 col-sm-7">
-                            <p class="my-0 text-secondary"><strong>{{ item.product.name }}</strong></p>
+                        <div class="col-6 col-sm-7" id="checkout-item-title">
+                            <p class="my-0">{{ item.product.name }}</p>
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">EUR{{ item.product.offer | calc_subtotal:item.quantity }}</p> 

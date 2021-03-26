@@ -48,6 +48,15 @@ body {
     color: #33adff;
 }
 
+#shopping-number {
+    position: absolute;
+    top: 11px;
+}
+
+#shopping-icon {
+    position: relative;
+}
+
 .fa-user {
     font-size: 1.5em!important;
 }
@@ -63,15 +72,6 @@ body {
 
 .fa-search {
     color: #040404;
-}
-
-#shopping-icon {
-    position: relative;
-}
-
-#shopping-number {
-    position: absolute;
-    top: 11px;
 }
 
 .form-control:focus {
@@ -264,7 +264,7 @@ a.category-badge > span.badge:hover {
 
 .artists-picture-image {
     width: 40vw;
-}
+} 
 
 .artistList {
     line-height: 110%;
@@ -415,8 +415,6 @@ input[name='q']::placeholder {
 	color: #17a2b8;
 }
 
-
-
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -430,6 +428,11 @@ input[name='q']::placeholder {
     min-height: 100%;
     opacity: 0;
     cursor: pointer;
+}
+
+#checkout-item-title {
+    color: #909090;
+    font-weight: 900;
 }
 
 .custom-checkbox .custom-control-label::before {
@@ -446,7 +449,7 @@ input[name='q']::placeholder {
 @media (max-width: 1600px) {
 
     .artists-picture {
-    height: 35vw;
+    height: 25vw;
 }
 
     .artists-bio-text {
@@ -479,7 +482,7 @@ input[name='q']::placeholder {
 }
 
     .artists-picture {
-    height: 50vw;
+    height: 40vw;
 }
 
     .artists-bio-text {

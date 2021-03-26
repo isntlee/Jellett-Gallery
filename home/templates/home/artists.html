@@ -33,12 +33,11 @@
 
             <p><a href="{% url 'products' %}?category=jane_rainey" data-img="{% static 'images/Toxicity.jpg' %}" class="artistList-link">Jane Rainey</a></p>
 
-            <p><a href="{% url 'products' %}?category=emma_sheridan" data-img="{% static 'images/Ajna.jpeg' %}" class="artistList-link">Emma Sheridan</a></p>
+            <p><a href="{% url 'products' %}?category=emma_sheridan" data-img="{% static 'images/MasKlub_3.jpeg' %}" class="artistList-link">Emma Sheridan</a></p>
 
             <p><a href="{% url 'products' %}?category=chanelle_walshe" data-img="{% static 'images/Spirit_ilACShQ.jpeg' %}" class="artistList-link">Chanelle Walshe</a></p>
         </div>
-        <div class="artistImage fade-in col-12 col-md-4 mb-3 mt-3">         
-             
+        <div class="artistImage col-12 col-md-4 mb-3 mt-3">         
             <img src="{% static 'images/Little_monster_II.jpg' %}" alt="Artist's work" class="w-100">
         </div>
     </div>
@@ -48,7 +47,7 @@
         <script type="text/javascript">
         $(".artistList a").hover(function() {
         var s = $(this).data("img");
-        $(".artistImage img").attr("src", s);
+        $(".artistImage img").attr("src", s); 
     });  
         </script>
 
