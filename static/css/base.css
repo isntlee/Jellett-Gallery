@@ -54,17 +54,24 @@ body {
 
 .fa-stack-2x {
    font-size: 1.5em!important;
-   color: #040404; 
-   top: 0vw;
+   color: #040404;
 }
 
 .fa-stack-1x {
     font-size: 0.6em!important;
-    top: 0.7vw;
 }
 
 .fa-search {
     color: #040404;
+}
+
+#shopping-icon {
+    position: relative;
+}
+
+#shopping-number {
+    position: absolute;
+    top: 11px;
 }
 
 .form-control:focus {
@@ -267,20 +274,18 @@ a.category-badge > span.badge:hover {
     height: 10vh;
 }
 
-
 a:link {
-  color: #040404;
-  transition: .3s;
+    color: #040404;
+    transition: .3s;
 }
 
 a:visited {
-  color: #040404;
+    color: #040404;
 }
 
 a:hover {
-  color: #33adff;
-  text-decoration: none;
-  /* transition-delay:1s; */
+    color: #33adff;
+    text-decoration: none;
 }
 
 a:active {
@@ -494,7 +499,6 @@ input[name='q']::placeholder {
 }
     .fa-stack-1x {
     font-size: 0.60em!important;
-    top: 0.75vw;
 }
 
  }
@@ -517,7 +521,6 @@ input[name='q']::placeholder {
 
     .fa-stack-1x {
     font-size: 0.60em!important;
-    top: 0.85vw;
 }
 
  }
@@ -526,7 +529,6 @@ input[name='q']::placeholder {
 
     .fa-stack-1x {
     font-size: 0.60em!important;
-    top: 0.9vw;
     }
 } 
 

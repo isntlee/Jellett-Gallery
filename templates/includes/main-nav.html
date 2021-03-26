@@ -42,8 +42,8 @@
                 <!-- You'll have to add a world full of media queries for this - complete waste of time -->
                 <li class="list-inline-item ">
                     <span class="fa-stack fa-lg">
-                        <a href="{% url 'view_bag' %}" class="fa fa-shopping-bag fa-stack-2x">
-                            <strong class="fa-stack-1x fa-inverse">
+                        <a href="{% url 'view_bag' %}" id="shopping-icon" class="fa fa-shopping-bag fa-stack-2x">
+                            <strong id="shopping-number" class="fa-stack-1x fa-inverse">
                                 {% if product_count %}
                                     {{ product_count }}
                                 {% endif %}
