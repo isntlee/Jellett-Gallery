@@ -8,17 +8,17 @@
         <div class="col-12 col-sm-5 col-md-7 col-lg-8 my-auto py-0">
             <ul class="list-inline list-unstyled text-right text-lg-right my-0 mt-2">
                 <li class="list-inline-item">
-                    <a class="logo-font font-weight-bold nav-link mr-0 ml-0" href="{% url 'artists' %}" id="clothing-link" aria-haspopup="true" aria-expanded="false">
+                    <a class="logo-font nav-link mr-0 ml-0" href="{% url 'artists' %}" id="clothing-link" aria-haspopup="true" aria-expanded="false">
                         Artists
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="logo-font font-weight-bold nav-link mr-0 ml-0" href="{% url 'exhibitions' %}" id="homeware-link" aria-haspopup="true" aria-expanded="false">
+                    <a class="logo-font nav-link mr-0 ml-0" href="{% url 'exhibitions' %}" id="homeware-link" aria-haspopup="true" aria-expanded="false">
                         Exhibitions
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="logo-font font-weight-bold nav-link mr-0" href="{% url 'about' %}" id="#" aria-haspopup="true" aria-expanded="false">
+                    <a class="logo-font nav-link mr-0" href="{% url 'about' %}" id="#" aria-haspopup="true" aria-expanded="false">
                         About
                     </a>
                 </li>
@@ -39,19 +39,18 @@
                         {% endif %}
                     </div>
                 </li>
-                <!-- You'll have to add a world full of media queries for this - complete waste of time -->
+                
                 <li class="list-inline-item ">
                     <span class="fa-stack fa-lg">
                         <a href="{% url 'view_bag' %}" id="shopping-icon" class="fa fa-shopping-bag fa-stack-2x">
-                            <strong id="shopping-number" class="fa-stack-1x fa-inverse">
+                            <span><strong id="shopping-number" class="fa-stack-1x fa-inverse">
                                 {% if product_count %}
                                     {{ product_count }}
                                 {% endif %}
-                            </strong>  
+                            </strong></span>  
                         </a>
                     </span>
                 </li>
-                <!-- Let's sort this damn thing out, once and for all -->
                 
                 <li class="list-inline-item">
                     <a class="nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

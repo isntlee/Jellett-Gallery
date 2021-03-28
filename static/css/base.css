@@ -12,6 +12,16 @@ body {
     background-color: #fafafa;
 }
 
+#shopping-number {
+    top: 11px;
+    position: absolute;
+    
+}
+
+#shopping-icon {
+    position: relative;
+}
+
 #topnav  {
     background-color: #fafafa;
 }
@@ -28,6 +38,7 @@ body {
 .nav-link {
     color: #040404;
     padding: .5rem .35rem;
+    font-weight: 600;
 }
 
 .nav-link:hover,
@@ -46,15 +57,6 @@ body {
 .fa-search-2x:active,
 .fa-search:focus {
     color: #33adff;
-}
-
-#shopping-number {
-    position: absolute;
-    top: 11px;
-}
-
-#shopping-icon {
-    position: relative;
 }
 
 .fa-user {
