@@ -6,3 +6,4 @@ Basic visual errors/fixes
 - There are quite a lot of problems with large screen sizes
 - Horizontal scroll on small screen (cart/bid page)
 - On artist select page, if cursor hovers between names
+- The search bar's movement is janky (sometimes)
