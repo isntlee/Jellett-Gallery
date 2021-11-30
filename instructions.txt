@@ -7,5 +7,6 @@ Basic visual errors/fixes
 - Horizontal scroll on small screen (cart/bid page)
 - On artist select page, if cursor hovers between names
 - The search bar's movement is janky (sometimes)
+_ The terminal panel must be locked into place
 
 - These all will have to be reaccessed soonish
